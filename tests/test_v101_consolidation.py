@@ -108,6 +108,48 @@ class FingerprintPortabilityTests(unittest.TestCase):
 class DependencyPolicyTests(unittest.TestCase):
     """Exact runtime locks must not regress below known security fixes."""
 
+    def test_every_matrix_interpreter_resolves_exactly_one_rpds_py(self):
+        """DEP-MARKER-001: requirements-dev.txt installs the monitoring lock, so
+        every pin in it must be installable on every interpreter in the CI
+        matrix. rpds-py==2026.6.3 declares Requires-Python >=3.11, so the 3.10
+        leg failed at install with 'No matching distribution found' -- before
+        reaching any test or audit. The lock now carries an environment-marker
+        pair; this asserts each matrix interpreter selects exactly one of them,
+        so neither an unsatisfiable nor an ambiguous set can ship again."""
+        from packaging.markers import Marker
+
+        workflow = (ROOT / '.github/workflows/ci.yml').read_text(encoding='utf-8')
+        versions = re.findall(r"'(3\.\d+)'", workflow)
+        matrix = sorted({v for v in versions if v.startswith('3.')})
+        self.assertTrue(matrix, 'no python-version matrix parsed from ci.yml')
+
+        lock = (ROOT / 'monitoring/requirements-monitoring.lock').read_text(encoding='utf-8')
+        entries = []
+        for line in lock.splitlines():
+            line = line.split('#')[0].strip()
+            if not line.startswith('rpds-py'):
+                continue
+            requirement, _, marker = line.partition(';')
+            entries.append((requirement.strip(), marker.strip()))
+        self.assertTrue(entries, 'no rpds-py pin found in the monitoring lock')
+
+        # A pin with no marker applies to EVERY interpreter, which is exactly
+        # how a 3.11+-only release reached the 3.10 leg. Requiring an explicit
+        # marker is what makes this guard fail on the original defect.
+        unmarked = [req for req, marker in entries if not marker]
+        self.assertEqual(
+            unmarked, [],
+            msg=f'rpds-py pins must be marker-qualified per interpreter; '
+                f'unqualified: {unmarked}')
+
+        for version in matrix:
+            selected = [req for req, marker in entries
+                        if Marker(marker).evaluate({'python_version': version})]
+            self.assertEqual(
+                len(selected), 1,
+                msg=f'python {version} selects {len(selected)} rpds-py pins '
+                    f'({selected}); each interpreter must select exactly one')
+
     def test_requests_pin_is_at_or_above_first_fixed_version(self):
         text = (ROOT / 'requirements.services.txt').read_text(encoding='utf-8')
         match = re.search(r'^requests==(\d+)\.(\d+)\.(\d+)\s*$', text, re.M)

@@ -61,7 +61,7 @@
       "size": 5
     },
     "RELEASE_VERSION": {
-      "sha256": "b5a0141b82cce41e8833190bd288017c6f5977bc50b0c93d09c915ad3a0bb1ec",
+      "sha256": "167fbc1c6487a725d2eab5aff46ca45e2d9e5c5049b4dc6ac3a619b220cf4c8f",
       "size": 24
     },
     "VALIDATION_STATUS.json": {
@@ -169,16 +169,16 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "dc41f31a9720656dac46849d5b15d9e9448b1cf96fd0b626a67b236e45430bac",
-      "size": 31939
+      "sha256": "23923c478e9691cdfeadd0f8ee56723f93cb7d47c129bae5967d67ab0013d72b",
+      "size": 31940
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "9fd48e892e8316a56f40a33b844a0334fc6ed7f17d5b8379a903dec1af85a81c",
-      "size": 205568
+      "sha256": "ceed14e39e3a72b5432620ffc0af512fb16a9af74e777115cace6459ff6b6d5c",
+      "size": 205726
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "7c51900cd34d65cf53216d1830543e89f1175d5eab51481e5283ccb171f6df40",
@@ -409,8 +409,8 @@
       "size": 46
     },
     "monitoring/requirements-monitoring.lock": {
-      "sha256": "0f85e243d89d80dd64b00d61b4f86871f78376592fd56e5589acbd057bb47828",
-      "size": 801
+      "sha256": "0a2993ed4b85474faa2b7cb718251b32fd1041a6b6dac7b11b26d6f9ddf2a9ce",
+      "size": 1255
     },
     "monitoring/requirements-monitoring.txt": {
       "sha256": "cf489db1c0720ddb5391809c8187ddef46b2307015d07a6c4bac76dcae42fcfb",
@@ -789,8 +789,8 @@
       "size": 13471
     },
     "tests/test_v101_consolidation.py": {
-      "sha256": "680dc1d3c351f78bd999be1433bec01c775b63c15df5db1c8a5f51ea2254321a",
-      "size": 11073
+      "sha256": "d95b74739c9b7fb4ab0f5e354b64ebb33d20b70bc03a4bdae86f1ad02e237e58",
+      "size": 13359
     },
     "tests/test_v101_v19_hardening.py": {
       "sha256": "8982190c82aeb87fbc0504b1ac429f2052f6e9b023c9da53e026bc6db7565c9b",
@@ -854,7 +854,7 @@
       }
     }
   },
-  "release": "V10.2-CODEX-2026-08-01K-LIVE",
+  "release": "V10.2-CODEX-2026-08-01L-LIVE",
   "safety_default": "simulation",
   "source_archives": {
     "binance_bot_V4.9.16_COMPLETE-1.zip": "e89c4025ce423bcaea67be226dbc7243d929c2da7a7e5e3a44152ab570fef41a",
