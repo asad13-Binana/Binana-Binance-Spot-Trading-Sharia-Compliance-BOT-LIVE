@@ -117,6 +117,7 @@ class DependencyPolicyTests(unittest.TestCase):
         pair; this asserts each matrix interpreter selects exactly one of them,
         so neither an unsatisfiable nor an ambiguous set can ship again."""
         from packaging.markers import Marker
+        from packaging.version import Version
 
         workflow = (ROOT / '.github/workflows/ci.yml').read_text(encoding='utf-8')
         versions = re.findall(r"'(3\.\d+)'", workflow)
@@ -142,6 +143,7 @@ class DependencyPolicyTests(unittest.TestCase):
             msg=f'rpds-py pins must be marker-qualified per interpreter; '
                 f'unqualified: {unmarked}')
 
+        chosen = {}
         for version in matrix:
             selected = [req for req, marker in entries
                         if Marker(marker).evaluate({'python_version': version})]
@@ -149,6 +151,20 @@ class DependencyPolicyTests(unittest.TestCase):
                 len(selected), 1,
                 msg=f'python {version} selects {len(selected)} rpds-py pins '
                     f'({selected}); each interpreter must select exactly one')
+            chosen[version] = Version(selected[0].split('==', 1)[1])
+
+        # Counting selections is not enough: reversing the two mappings still
+        # yields exactly one pin per interpreter while handing 3.10 the release
+        # that dropped 3.10. Markers are only needed because newer releases
+        # raise their floor, so the selected version must never DECREASE as the
+        # interpreter version rises.
+        ordered = sorted(chosen, key=Version)
+        for older, newer in zip(ordered, ordered[1:]):
+            self.assertLessEqual(
+                chosen[older], chosen[newer],
+                msg=f'python {older} selects rpds-py {chosen[older]} but python '
+                    f'{newer} selects {chosen[newer]}; an older interpreter must '
+                    f'never be given a newer release than a newer interpreter')
 
     def test_requests_pin_is_at_or_above_first_fixed_version(self):
         text = (ROOT / 'requirements.services.txt').read_text(encoding='utf-8')
