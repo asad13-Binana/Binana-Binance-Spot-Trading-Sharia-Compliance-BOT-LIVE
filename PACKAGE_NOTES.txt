@@ -1,0 +1,16 @@
+BINANCE BOT LIVE-CAPABLE RELEASE CANDIDATE
+
+Purpose: real Binance Spot execution only after all promotion gates pass.
+RELEASE_MODE=live, but .env.example intentionally starts in simulation with
+BINANCE_TESTNET=true. This prevents an unpack-and-run action from risking money.
+
+Live promotion requires all of the following for the exact installed hash:
+1. Successful GitHub verification and artifact re-extraction checks.
+2. Completed Binance Spot Testnet lifecycle and Oracle soak evidence.
+3. Signed live-evidence gate and owner review.
+4. EXECUTION_MODE=live and BINANCE_TESTNET=false changed together.
+5. Restricted Binance API key (Spot trading only; withdrawals disabled; IP allowlist).
+6. GitHub oracle-production environment with required reviewers; deployment is
+   manual workflow_dispatch only.
+
+This package is live-capable, not externally certified, and not a profit claim.

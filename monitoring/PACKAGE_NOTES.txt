@@ -1,0 +1,4 @@
+MODE: BINANCE SPOT LIVE - RELEASE CANDIDATE
+The bot package is live-capable but starts in simulation. Live monitoring is
+also disabled until promotion, binds only to 127.0.0.1:8091 when enabled, and
+uses a separate monitor token and Telegram token. It never reads trading keys.
