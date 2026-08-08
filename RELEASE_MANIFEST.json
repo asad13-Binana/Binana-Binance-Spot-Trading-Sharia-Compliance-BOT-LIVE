@@ -65,7 +65,7 @@
       "size": 24
     },
     "VALIDATION_STATUS.json": {
-      "sha256": "1517c035ca3e9f6c85db547ca9b9732669dac480d8091fef25771bb7b732a34e",
+      "sha256": "0048242cf64307ea9cc6cd328d68e82de5bf218ebc9298adb6e5576cc0b19ac0",
       "size": 4486
     },
     "deploy/install_artifact.sh": {
@@ -93,7 +93,7 @@
       "size": 3963
     },
     "docs/CODEX_RELEASE_NOTES_2026-08-08.md": {
-      "sha256": "01ef17a80f3bbeda4e093b6b0d951147842a39398a5ee44c27d9e7bd52f6d90c",
+      "sha256": "4f1f5fe8945537e4b34d491b47b694a2c630157ae585719137695e8630ec5ed3",
       "size": 3356
     },
     "docs/DEEP_AUDIT_RESPONSE.md": {
@@ -173,7 +173,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "02d6ec26099af81679b2f7338cf5ac20e69148b67273fad78048e42e6694ae3f",
+      "sha256": "82587ae10cab832f0ee7a7ea3f8fac7eddb54bb35b3099913a7817e634aab25f",
       "size": 32419
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -477,8 +477,8 @@
       "size": 344
     },
     "requirements.services.lock": {
-      "sha256": "ea1bc233b94d51c79a0a3ddebe10ad0639b2caf48d1df4dc54819d8761cdf5d3",
-      "size": 94734
+      "sha256": "d390e5f50e06795397ba23fc8cc5471a0a7a34425335ba90bc6c68d3ba159473",
+      "size": 95033
     },
     "requirements.services.txt": {
       "sha256": "652f6ecffe4e895715ee4cef070932b3d3d8dc93aac08434ddd5e36655c8dae6",
