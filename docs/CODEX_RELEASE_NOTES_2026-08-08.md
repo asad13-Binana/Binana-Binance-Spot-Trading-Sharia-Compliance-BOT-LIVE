@@ -19,7 +19,7 @@ default in simulation mode and is not certified for real-money trading.
   generated release manifest.
 - Release and validation metadata have been advanced together to remove the
   stale revision mismatch.
-- All 61 exact service and monitoring runtime requirement records are now
+- All 62 exact service and monitoring runtime requirement records are now
   SHA-256 hash-locked. CI, the service image build and the Oracle monitoring
   installer enforce them with separate `pip --require-hashes` invocations.
 - The Oracle preflight now accepts the Python dependency closures and remains
