@@ -17,7 +17,7 @@
       "size": 825
     },
     ".github/workflows/ci.yml": {
-      "sha256": "0272d7a00c9a7fa736cb9611da7a3e917192f562d2339c5e85d5e2707db2f8ce",
+      "sha256": "33cad85db99153d855935b4dab62e320e253c5caa9940e23e696034503b8b6a1",
       "size": 18998
     },
     ".gitignore": {
@@ -181,7 +181,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "bd73b3162b55af8442ffd966bdf3203ec61ca4081e0a936fabadda6d66baecc1",
+      "sha256": "bb8d33c7cda672838df2b934e4b5ed968ba7381a86c18aa908a8217571af4d62",
       "size": 34503
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
