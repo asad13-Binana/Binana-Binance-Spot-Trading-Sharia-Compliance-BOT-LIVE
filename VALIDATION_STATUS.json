@@ -2,34 +2,33 @@
   "release": "V10.3-LOCAL-SHARIA-2026-08-09A",
   "revision": "2026-08-09A",
   "assessment_date": "2026-08-09",
-  "package_mode": "live",
-  "default_execution_mode": "simulation",
+  "package_mode": "testnet",
+  "default_execution_mode": "testnet",
   "production_live_certified": false,
   "core_strategy_changed": false,
-  "readiness_classification": "OFFLINE SELF-HOSTED SHARIA, SOURCE, PACKAGE, AND RELEASE GATES PASSED; REAL-MONEY EXECUTION REMAINS NO-GO PENDING GITHUB CI, AUTHENTICATED SPOT TESTNET, ORACLE SOAK, PERFORMANCE, AND SIGNED LIVE-PROMOTION EVIDENCE",
+  "readiness_classification": "OFFLINE SELF-HOSTED SHARIA, SOURCE, PACKAGE, AND RELEASE GATES PASSED; GITHUB CI, AUTHENTICATED SPOT TESTNET, ORACLE SOAK, AND LIVE-PROMOTION EVIDENCE REMAIN REQUIRED",
   "protected_hashes": {
     "strategy_sha256": "9f6bafc78c8cd0d9b9cbde615ddce89e304ab09738584b88d05bfdf92ff4e830",
     "legacy_core_sha256": "70b1d67cc0092b5b8db4a68b343cf893641bde1aae580e9ef51e2adec1062459"
   },
   "package_interlock": {
-    "release_mode": "live",
-    "default_is_simulation": true,
-    "promotion_requires_signed_evidence": true,
-    "cached_sharia_gate_allowed": true,
-    "screening_policy": "Sharia screening is self-hosted on Oracle with no model API; entry eligibility requires a signed, exact-report-bound owner approval no older than seven days. Live execution additionally requires signed promotion evidence bound to the exact installed release.",
-    "note": "This package retains a live-capable path but ships disarmed in simulation and is not certified for real-money use."
+    "release_mode": "testnet",
+    "live_execution_possible": false,
+    "screening_policy": "Sharia screening is self-hosted on Oracle with no model API; execution requires a signed, report-bound approval no older than seven days. Live execution remains structurally blocked.",
+    "note": "The image-baked, read-only RELEASE_MODE interlock cannot be promoted to live by editing .env."
   },
   "offline_results": {
-    "full_release_gate": "passed locally: the 410-test core run completed with 405 passes and 5 documented skips, plus 50 monitoring passes and 33 of 33 preserved legacy self-tests; combined pytest also passed 456 tests with 10 documented skips and 80 subtests",
-    "audit_ledgers": "verified exact tree parity after regeneration: 224 files and 1832 functions",
-    "release_manifest": "regenerated after the quote-truncation fix; 222-file exact set/hash verification passed locally",
+    "full_release_gate": "passed locally at this exact revision: 331 core tests passed with 8 documented skips and 238 subtests, plus the monitoring suite. Counts are re-derived at every revision; a previous commit left them describing the prior head.",
+    "audit_ledgers": "verified exact tree parity after regeneration at this exact revision: 224 files and 1851 functions",
+    "release_manifest": "regenerated at this exact revision; 222-file exact set/hash verification passed locally",
     "strategy_integrity": "protected bytes and source/token fingerprints match the reviewed baseline",
     "dependency_locks": "runtime dependencies, including the pure-Python PDF parser, are SHA-256 hash-locked and installed with pip --require-hashes; local strict vulnerability audit found no known vulnerabilities",
     "container_execution": "not run locally because no Docker engine was available; both base images are digest-pinned with amd64 and arm64 manifests, and GitHub Actions remains required for this revision",
     "authenticated_binance_orders": "not attempted",
     "telegram_real_credentials": "not used",
     "oracle_deployment": "not attempted",
-    "sharia_evidence_binding": "a positive screener verdict is judged on the full sentence the retrieved source contains, not on the fragment supplied by the caller, so trimming a negative prefix cannot launder negative evidence into a positive record"
+    "sharia_evidence_binding": "a positive screener verdict is judged on the full sentence the retrieved source contains, across EVERY occurrence of the quoted fragment, with abbreviation-aware sentence boundaries, so neither trimming a negative prefix nor a contradictory second occurrence can produce a positive record",
+    "retriever_egress_policy": "destinations are resolved and required to be globally routable before the request, and the live socket peer is re-checked before any body is read, closing the DNS-rebinding window; a rejected response is closed deterministically. This prevents consuming a private response, but the GET has already been sent, so it is not a substitute for network-level egress denial of private and link-local ranges on the host."
   },
   "repair_summary": {
     "universe": "full immutable snapshot reopen, semantic hash, filename/path, configuration, ranking, schema, freshness, and retention validation",
@@ -46,7 +45,7 @@
     "Authenticated Binance Spot Testnet lifecycle evidence for partial fills, accepted-timeout recovery, cancel races and user-stream reconciliation",
     "Oracle testnet deployment, restart/network/OOM/disk/backup/rollback drills and soak",
     "Fee-and-slippage backtesting and owner performance review",
-    "Signed reconciliation, rollback and exact-release promotion evidence before any live promotion"
+    "Signed reconciliation and rollback evidence before any live promotion"
   ],
-  "safety_statement": "Real-money trading remains NO-GO. This package is not a profitability claim, financial advice, or a religious ruling."
+  "safety_statement": "This package is restricted to Binance Spot Testnet. It is not a profitability claim, financial advice, or a religious ruling."
 }
