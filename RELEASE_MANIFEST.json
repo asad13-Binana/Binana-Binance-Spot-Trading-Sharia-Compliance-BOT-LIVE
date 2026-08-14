@@ -17,8 +17,8 @@
       "size": 825
     },
     ".github/workflows/ci.yml": {
-      "sha256": "a89a2582ca29823cd2403c3c16082ff567b6ad0279cf0b382d08fc6c676adb58",
-      "size": 22047
+      "sha256": "61bd3f18137f22a3bdd8e68059100d5960607f000ace20e5b02f1b9b31f9a88a",
+      "size": 24695
     },
     ".gitignore": {
       "sha256": "80851308cc3aef5cd314b9a5bee87112443f0604bb6238348eeeb57d3ef868f7",
@@ -59,6 +59,10 @@
     "NON_CORE_RESILIENCE_CHANGES_2026-08-13.txt": {
       "sha256": "36f117c1845c5c0959f33d8ae97978743e7987b76f7da410fd97078e716891e6",
       "size": 2780
+    },
+    "NON_CORE_VALIDATION_HARDENING_2026-08-14.txt": {
+      "sha256": "46e019cc33998bacd1f6440d540768d5c06f85414977808269ce2c2d8121cb9e",
+      "size": 1800
     },
     "ORACLE_DEPLOYMENT_HARDENING_REPORT_2026-08-13.md": {
       "sha256": "2d5cac41079523744975644f30f047734fcdadcbee3fa00151efa4f72cff7b4c",
@@ -173,8 +177,8 @@
       "size": 1227
     },
     "deploy/verify_release.sh": {
-      "sha256": "ccb1ff89f9acdeca95cee70f5c3db4babad5ad18a2dfafc33a8ec51f971ada0d",
-      "size": 10903
+      "sha256": "5f20284ce8667342bd53c38c8735b6b586f63e6e16fd7e5cb7789b1ef4f72000",
+      "size": 11019
     },
     "docker-compose.yml": {
       "sha256": "dc0713b870f20e626cb9429dd2061a72144f9bef18d6874aa9aa77cdbe76b766",
@@ -285,16 +289,16 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "4b90748dc29f46bf99589d460a5cb5d8eb8e5023bf9c07ec0236d786e58fd598",
-      "size": 42957
+      "sha256": "52967125ba635454fe65a8d74b4c49e4291b699ff2e44ea7d67a4f578345adc5",
+      "size": 43866
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "fe17164c693974a25d897706f94f58fe2e1ca4416ddc8f8a8e6277ca6dafb625",
-      "size": 263117
+      "sha256": "672fe45917b9a78967ceaef2c4a2c2e24c3b3c51a900248eff7482eed1a67c14",
+      "size": 264986
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -617,8 +621,8 @@
       "size": 25901
     },
     "requirements-dev.txt": {
-      "sha256": "a4ec2f80a7b5549caa1120198e1d748f243b139c6738ecbd3e841de5d7e7dea6",
-      "size": 344
+      "sha256": "4ed98842d9a4ed572e9bda6db033a38b9307add5daea7af83fd6e0e6d8446f17",
+      "size": 408
     },
     "requirements.services.lock": {
       "sha256": "2708e20365b22665ea21782e7bc0ea9bd81428aa469c50cc5a4b6a827495b7c1",
@@ -633,12 +637,12 @@
       "size": 11166
     },
     "scripts/build_audit_ledgers.py": {
-      "sha256": "7b4a4d27728464272464248c0c0daf6c10e6b0ef36718f481f45e39e6998e1c8",
-      "size": 9456
+      "sha256": "fd17bd3993cabb4c41b2bedf67c0e81ec8fa00e3b03fd8b7307968ae0d7086d3",
+      "size": 9478
     },
     "scripts/build_manifest.py": {
-      "sha256": "7822e8afbe73d1cb17a27e98fba2c7cddeffa563e9a1dc0de4825595c0873708",
-      "size": 4818
+      "sha256": "c7edbc6b1adeadd9b9d93c6d8bed9e87156971a5c0750cc8392980fded06faa0",
+      "size": 4833
     },
     "scripts/generate_evidence_status.py": {
       "sha256": "666ad3552a539babc7d109e8e1950800e206efdc638d8cbd30da4b81a649152a",
@@ -656,9 +660,17 @@
       "sha256": "826ee0a79b26f90b729531da9f658e30c7dc4885255d4fc4c7fd024f7a2c19be",
       "size": 1006
     },
+    "scripts/scan_git_history_secrets.py": {
+      "sha256": "80211d99936627a6a1b61c8e2cf773b0de2b65e1c63ad9db2ba13bd7468df893",
+      "size": 4094
+    },
     "scripts/seed_source_registry.py": {
       "sha256": "0e3b869c5ceeb8f56ebd9857e36fb817dd4fb93ee38b3ad048624c45867d9e63",
       "size": 24318
+    },
+    "scripts/verify_coverage_ratchet.py": {
+      "sha256": "2ba42d2b8800518ba0bd744d87fdae0be507e8ef4abac1dea4d79a9087d8d643",
+      "size": 1469
     },
     "scripts/verify_deployment_supply_chain.py": {
       "sha256": "570e4d7f0a23be4fe99e2271e06e290efaec062d5423294c2754fd0876f12232",
@@ -976,6 +988,10 @@
       "sha256": "d3478635cdb092c24507dbae3f4d9306fb83d1e6992b8df08612f50a3a4c740f",
       "size": 12576
     },
+    "tests/conftest.py": {
+      "sha256": "ea9cf9d30308a7ce47e04d99367c4a7c155b9a76538bf1dbbc2ad720fae83fb0",
+      "size": 372
+    },
     "tests/secret_scan.py": {
       "sha256": "fc88d8ed5b9020632e552f12f6e0f98416868d609ceb5779c30b1470224b2be8",
       "size": 2588
@@ -989,8 +1005,8 @@
       "size": 7529
     },
     "tests/test_audit_ledgers.py": {
-      "sha256": "b7f189a4b7d5d4e38c21c91c4b3893881e61d688cc103a7cc5cb8daf0525399d",
-      "size": 6893
+      "sha256": "cb7f45200a98bfcb307e683eec37e4e47d8c455d9034ab4ede2dffa4cc1c47f0",
+      "size": 6923
     },
     "tests/test_ci_evidence_status.py": {
       "sha256": "1e9d5e4b2b75ef22b110b2724c1b172044202266f921bc27f0c16d54cc199dc2",
@@ -1003,6 +1019,10 @@
     "tests/test_external_signals.py": {
       "sha256": "890fd1b385a918f664d98d504ceb7bd6730597407074409c2844451221dd2bf4",
       "size": 70185
+    },
+    "tests/test_git_history_secret_scan.py": {
+      "sha256": "abf60008986801328c79bdb60dff1e1ce2882e8c4d96df475a55314be71319c5",
+      "size": 1661
     },
     "tests/test_local_sharia_backend.py": {
       "sha256": "28f4685ea16cc4581137e14469ee3f2258646277ca4a7e22912838bf725b9243",
@@ -1031,6 +1051,10 @@
     "tests/test_phase_6_8_repairs.py": {
       "sha256": "c903fd01506de67323b1e770c08a869cd35f36954f05a71b8839df0e905e57bd",
       "size": 20089
+    },
+    "tests/test_property_invariants.py": {
+      "sha256": "cac45d4f1a4922bed3dce8b54e1f44f9be0c0fd11e866f0ea14e677a6bd41d13",
+      "size": 1599
     },
     "tests/test_safety_state_sqlite.py": {
       "sha256": "8bd01abb2ba02393aa58f521490786054b5ec98e1b05c55cf7a14e20cd9468eb",
@@ -1085,8 +1109,8 @@
       "size": 21319
     },
     "tests/test_workflow_graph.py": {
-      "sha256": "2a8f22e7f2b3ead500a6011b15e67f8ffc49baab0752f21f798bd970c1055784",
-      "size": 7217
+      "sha256": "bb970e04d3c93deea1e34f3955697a0bbfc19dd386df209e54abd2c468105ae5",
+      "size": 7738
     }
   },
   "lineage": "V8.1-MERGED-AUDITED (safety baseline) + reviewed V10 operational imports",
