@@ -443,7 +443,7 @@ jobs:
           scp -P "${ORACLE_PORT:-22}" \
             /tmp/v101-artifact/binance-bot-live-trading-${GITHUB_SHA}.tar.gz \
             /tmp/v101-artifact/binance-bot-live-trading-${GITHUB_SHA}.tar.gz.sha256 \
-            "${ORACLE_USER}@${ORACLE_HOST}:/var/lib/binana-deploy/inbox/"
+            "${ORACLE_USER}@${ORACLE_HOST}:/var/lib/binana-live/deploy-inbox/"
       - name: Owner-approved atomic simulation install with reconciliation and rollback
         env:
           ORACLE_HOST: ${{ secrets.ORACLE_HOST }}
@@ -454,4 +454,4 @@ jobs:
           # The host .env remains simulation/BINANCE_TESTNET=true and the
           # root-owned approval file must already contain this archive digest.
           ssh -p "${ORACLE_PORT:-22}" "${ORACLE_USER}@${ORACLE_HOST}" \
-            "sudo /usr/local/sbin/binana-deploy /var/lib/binana-deploy/inbox/binance-bot-live-trading-${GITHUB_SHA}.tar.gz /var/lib/binana-deploy/inbox/binance-bot-live-trading-${GITHUB_SHA}.tar.gz.sha256"
+            "sudo /usr/local/sbin/binana-live-deploy /var/lib/binana-live/deploy-inbox/binance-bot-live-trading-${GITHUB_SHA}.tar.gz /var/lib/binana-live/deploy-inbox/binance-bot-live-trading-${GITHUB_SHA}.tar.gz.sha256"
