@@ -38,8 +38,18 @@ class DeployGateGraphTests(unittest.TestCase):
         self.jobs = self.workflow.get('jobs', {})
 
     def test_mandatory_gate_jobs_exist(self):
-        for job in REQUIRED_DEPLOY_PREREQUISITES | {'verify', 'deploy-oracle'}:
+        for job in REQUIRED_DEPLOY_PREREQUISITES | {
+            'verify', 'sast', 'quality-evidence', 'deploy-oracle',
+        }:
             self.assertIn(job, self.jobs, msg=f'workflow job {job!r} is missing')
+
+    def test_artifact_waits_for_security_and_quality_evidence(self):
+        needs = self.jobs['artifact'].get('needs')
+        needs = [needs] if isinstance(needs, str) else list(needs or [])
+        self.assertTrue(
+            {'verify', 'sast', 'quality-evidence'}.issubset(needs),
+            msg='artifact creation must wait for verification, SAST and coverage evidence',
+        )
 
     def test_deploy_requires_every_mandatory_gate(self):
         needs = self.jobs['deploy-oracle'].get('needs')
@@ -116,6 +126,7 @@ class ReleaseGateTraversalTests(unittest.TestCase):
     def test_release_gate_prunes_generated_cache_directories(self):
         source = (ROOT / 'deploy/verify_release.sh').read_text(encoding='utf-8')
         self.assertGreaterEqual(source.count("-path './.pytest_cache' -prune"), 3)
+        self.assertGreaterEqual(source.count("-path './.hypothesis' -prune"), 3)
         self.assertGreaterEqual(source.count("-path '*/__pycache__' -prune"), 3)
 
 

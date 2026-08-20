@@ -65,6 +65,7 @@ if problems:
 print(f'release identity consistent: {version} ({mode})')
 PY
 python -m unittest discover -s tests -p 'test_*.py' -v
+python -m pytest -q tests/test_api_readiness.py
 python -m pytest -q monitoring/tests
 python tests/secret_scan.py
 python -m services.universe_service.validate_sharia shared/sharia/sharia_status.json
@@ -104,6 +105,7 @@ case "$(uname -s 2>/dev/null || echo unknown)" in
     NON_EXEC=$(find . \
       -path './.git' -prune -o \
       -path './.pytest_cache' -prune -o \
+      -path './.hypothesis' -prune -o \
       -path '*/__pycache__' -prune -o \
       -type f -name '*.sh' ! -perm -u+x -print | head -20 || true)
     if [ -n "$NON_EXEC" ]; then
@@ -114,6 +116,7 @@ case "$(uname -s 2>/dev/null || echo unknown)" in
     WRITABLE=$(find . \
       -path './.git' -prune -o \
       -path './.pytest_cache' -prune -o \
+      -path './.hypothesis' -prune -o \
       -path '*/__pycache__' -prune -o \
       -type f -perm /022 -print | head -20 || true)
     if [ -n "$WRITABLE" ]; then
@@ -140,6 +143,7 @@ PY
 find . \
   -path './.git' -prune -o \
   -path './.pytest_cache' -prune -o \
+  -path './.hypothesis' -prune -o \
   -path '*/__pycache__' -prune -o \
   -type f -name '*.sh' -print0 | while IFS= read -r -d '' script; do bash -n "$script"; done
 

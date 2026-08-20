@@ -144,6 +144,12 @@ class Config:
         self.validation_status_path = Path(os.getenv(
             "VALIDATION_STATUS_PATH", str(runtime / "release_validation.json")
         ))
+        self.offhost_backup_status_path = Path(os.getenv(
+            "OFFHOST_BACKUP_STATUS_PATH", str(runtime / "offhost_backup_status.json")
+        ))
+        self.api_readiness_status_path = Path(os.getenv(
+            "API_READINESS_STATUS_PATH", str(runtime / "api_readiness_status.json")
+        ))
 
         self.enable_docs = _bool("MONITOR_ENABLE_DOCS", False)
         default_base = (

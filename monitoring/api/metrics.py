@@ -236,6 +236,81 @@ def log_freshness() -> dict:
     return file_freshness(CONFIG.log_path)
 
 
+def offhost_backup_status() -> dict:
+    """Return only redacted durability metadata; never return backup contents."""
+    data, error = _safe_json(CONFIG.offhost_backup_status_path)
+    if error:
+        return {
+            "status": "not_configured" if error == "missing" else "unavailable",
+            "available": False,
+            "fresh": False,
+            "reason": error,
+        }
+    if not isinstance(data, dict):
+        return {"status": "unavailable", "available": False, "fresh": False,
+                "reason": "invalid_shape"}
+    stamp = data.get("completed_at") or data.get("failed_at")
+    epoch = _parse_time(stamp)
+    age = None if epoch is None else max(0, time.time() - epoch)
+    fresh = age is not None and age <= 36 * 3600
+    ok = data.get("ok") is True and data.get("completed_at") and fresh
+    safe = {
+        key: data.get(key) for key in (
+            "ok", "completed_at", "failed_at", "source_backup", "object_name",
+            "encrypted_sha256", "authentication", "exit_code",
+        ) if key in data
+    }
+    return redact_obj({
+        "status": "healthy" if ok else "degraded",
+        "available": True,
+        "fresh": bool(fresh),
+        "age_seconds": None if age is None else round(age, 3),
+        "data": safe,
+    })
+
+
+def api_readiness_status() -> dict:
+    """Return the sanitised, GET-only provider credential preflight result."""
+    data, error = _safe_json(CONFIG.api_readiness_status_path)
+    if error:
+        return {
+            "status": "not_run" if error == "missing" else "unavailable",
+            "available": False,
+            "fresh": False,
+            "reason": error,
+        }
+    if not isinstance(data, dict) or data.get("schema_version") != 1:
+        return {
+            "status": "unavailable", "available": False, "fresh": False,
+            "reason": "invalid_shape",
+        }
+    epoch = _parse_time(data.get("generated_at"))
+    age = None if epoch is None else max(0, time.time() - epoch)
+    fresh = age is not None and age <= 24 * 3600
+    providers = data.get("providers") if isinstance(data.get("providers"), dict) else {}
+    safe_providers = {}
+    for name in ("binance", "telegram", "coingecko", "coinmarketcap"):
+        value = providers.get(name)
+        if not isinstance(value, dict):
+            continue
+        details = value.get("details") if isinstance(value.get("details"), dict) else {}
+        safe_providers[name] = {
+            "status": value.get("status"),
+            "required": bool(value.get("required")),
+            "reason": redact(str(details.get("reason") or "")) or None,
+        }
+    ok = data.get("ok") is True and fresh
+    return {
+        "status": "healthy" if ok else "degraded",
+        "available": True,
+        "fresh": bool(fresh),
+        "age_seconds": None if age is None else round(age, 3),
+        "package_mode": data.get("package_mode"),
+        "network_operations": data.get("network_operations"),
+        "providers": safe_providers,
+    }
+
+
 def error_lines(lines: int = 200) -> dict:
     raw, truncated, error = tail_log(lines)
     if error:

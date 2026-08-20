@@ -48,6 +48,8 @@ def health(request_id: str = Depends(require_bearer)):
         databases=metrics.databases(),
         telegram_alerts=metrics.telegram_alert_outbox_status(),
         log=metrics.log_freshness(),
+        offhost_backup=metrics.offhost_backup_status(),
+        api_readiness=metrics.api_readiness_status(),
     )
 
 
@@ -62,6 +64,8 @@ def status(request_id: str = Depends(require_bearer)):
         order_quality=metrics.order_quality(1),
         websocket=metrics.websocket_status(),
         telegram_alerts=metrics.telegram_alert_outbox_status(),
+        offhost_backup=metrics.offhost_backup_status(),
+        api_readiness=metrics.api_readiness_status(),
         deployment=metrics.deployment_info(),
     )
 
@@ -159,6 +163,8 @@ def report(
         ("crashes", metrics.crash_blocks, (24,)),
         ("sharia", metrics.sharia_status, ()),
         ("deployment", metrics.deployment_info, ()),
+        ("offhost_backup", metrics.offhost_backup_status, ()),
+        ("api_readiness", metrics.api_readiness_status, ()),
         ("security_warnings", metrics.recent_security_warnings, ()),
     )
     for key, collector, args in collectors:
