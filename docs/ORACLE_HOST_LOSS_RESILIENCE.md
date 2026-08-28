@@ -56,14 +56,14 @@ authorise a replacement VM.
 On the VM:
 
 ```bash
-sudoedit /etc/binana-freqtrade-v101/offhost-backup.env
-sudo chmod 0600 /etc/binana-freqtrade-v101/offhost-backup.env
-sudo chown root:root /etc/binana-freqtrade-v101/offhost-backup.env
-sudo /opt/binana-freqtrade-v101/current/deploy/configure_offhost_backup.sh
-sudo systemctl start binana-state-backup.service
-sudo systemctl start binana-offhost-backup.service
-sudo systemctl status binana-offhost-backup.service --no-pager
-sudo /opt/binana-freqtrade-v101/current/deploy/oracle_validate.sh
+sudoedit /etc/binana-live/offhost-backup.env
+sudo chmod 0600 /etc/binana-live/offhost-backup.env
+sudo chown root:root /etc/binana-live/offhost-backup.env
+sudo /opt/binana-live/current/deploy/configure_offhost_backup.sh
+sudo systemctl start binana-live-state-backup.service
+sudo systemctl start binana-live-offhost-backup.service
+sudo systemctl status binana-live-offhost-backup.service --no-pager
+sudo /opt/binana-live/current/deploy/oracle_validate.sh
 ```
 
 `configure_offhost_backup.sh` pulls Oracle's official OCI CLI image by immutable
@@ -98,7 +98,7 @@ identity temporarily as root-owned mode `0600`, stage one known timestamp, and
 remove the identity from the VM when the drill is complete:
 
 ```bash
-sudo /opt/binana-freqtrade-v101/current/deploy/stage_offhost_restore.sh \
+sudo /opt/binana-live/current/deploy/stage_offhost_restore.sh \
   YYYYMMDDTHHMMSSZ /root/binana-recovery-identity.txt
 sudo rm -f /root/binana-recovery-identity.txt
 ```
