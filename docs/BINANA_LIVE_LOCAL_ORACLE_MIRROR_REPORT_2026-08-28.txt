@@ -1,0 +1,133 @@
+BINANA LIVE — NON-CORE ORACLE/SHARIA/TELEGRAM HARDENING REPORT
+Date: 2026-08-28
+Status: local implementation validated; GitHub publication pending
+
+Repository
+----------
+Repository: asad13-Binana/Binana-Binance-Spot-Trading-Sharia-Compliance-BOT-LIVE
+Baseline main: 4e76f5dd3e28a4782b4bb11c79a46c3a52c2e97b
+Working branch: codex/oracle-sharia-telegram-hardening-20260828
+Package mode: live
+Default execution mode remains: simulation
+production_live_certified remains: false
+
+Scope and safety boundary
+-------------------------
+This change mirrors only applicable non-core hardening from the independently
+validated TestNet package. It does not change strategy signals, indicators,
+entry/exit logic, position sizing, protected legacy execution logic, or the
+V19.1 Sharia decision engine/rulebook. It does not configure credentials,
+deploy to a host, enable LIVE-money execution, or place an order.
+
+Implemented non-core changes
+----------------------------
+1. Added a guarded Sharia screener entrypoint so a missing or unusable local
+   registry is explicit and fail-closed instead of appearing healthy.
+2. Added owner/operator source-review helpers and tests without permitting
+   discovered records to self-authorise trading.
+3. Strengthened source-registry seeding, URL/identity checks, provider request
+   budgets, public Binance HTTP handling, and regression coverage.
+4. Expanded the Telegram broker's read-only status and operator information
+   surfaces without exposing secrets or granting it order ownership.
+5. Added validation-environment, pair-file, Oracle capacity, provider-budget,
+   and Sharia operator regression tests.
+6. Corrected LIVE deployment namespaces and retained LIVE's production public
+   metadata endpoint while keeping execution in simulation by default.
+7. Enforced a two-CPU Oracle capacity floor and ARM64 default; AMD64 requires an
+   explicit reviewed override for temporary AWS experiments.
+8. Repaired the scheduled Binance contract-drift Action pin and retained
+   read-only contract checking.
+9. Updated operator documentation for the LIVE paths, API readiness, Telegram,
+   backups, rollback, and local Sharia source review.
+
+Validation evidence
+-------------------
+Targeted non-core regression tests:
+  95 passed; 85 subtests passed.
+
+Complete local pytest suite:
+  690 passed; 11 skipped; 340 subtests passed.
+
+CI-equivalent coverage run:
+  690 passed; 10 skipped; 1 intentionally deselected; 340 subtests passed.
+  Branch coverage: 70.30%.
+  Enforced non-regression floor: 68.00% — passed.
+  Aspirational target: 85.00% — pending; no 85% certification is claimed.
+
+Offline release gate:
+  Passed.
+  587 unittest tests passed with 5 skips.
+  Monitoring: 58 passed, 1 skipped.
+  Legacy self-tests: 33/33 passed.
+  Secret scan, V19.1 integrity, manifest, audit-ledger, JSON, systemd-pairing,
+  and YAML structural checks passed. Docker/systemd runtime execution remains a
+  real-host validation item.
+
+Protected SHA-256 values (unchanged)
+------------------------------------
+9f6bafc78c8cd0d9b9cbde615ddce89e304ab09738584b88d05bfdf92ff4e830
+  freqtrade/user_data/strategies/IctSmcStrategy.py
+70b1d67cc0092b5b8db4a68b343cf893641bde1aae580e9ef51e2adec1062459
+  legacy_core/binance_bot_V4.9.16_ALL_IN_ONE.py
+5eb9fd5338d80fcaf0d39bb3f4935a75b57dd91136c72a83a7551b659b04d865
+  services/common/sharia_v19.py
+07106bb8bfc1924d8d0c6f61ced4e0c51c2ac2054988423f42c1fd67f3b2ba78
+  shared/sharia/HALAL_CRYPTO_SPOT_SCREENING_V19_1_PRODUCTION.json
+
+Files changed or added
+----------------------
+.env.example
+.github/workflows/binance-contract-drift.yml
+README.md
+RELEASE_MANIFEST.json
+RELEASE_SHA256.txt
+deploy/install_artifact.sh
+deploy/oracle_setup.sh
+docker-compose.yml
+docs/API_READINESS_RUNBOOK.md
+docs/BINANA_LIVE_LOCAL_ORACLE_MIRROR_REPORT_2026-08-28.txt
+docs/EXTERNAL_SIGNALS.md
+docs/GITHUB_ORACLE_DEPLOYMENT.md
+docs/GITHUB_RELEASE_AND_ROLLBACK_GUIDE.md
+docs/OFFICIAL_DEPLOYMENT_REFERENCES.md
+docs/ORACLE_DEPLOYMENT_GUIDE.md
+docs/ORACLE_HOST_LOSS_RESILIENCE.md
+docs/SECURITY_AND_SECRETS_GUIDE.md
+docs/SHARIA_0G_SOURCE_REVIEW_2026-08-28.md
+docs/SHARIA_LOCAL_SCREENING.md
+docs/TELEGRAM_BOT_SETUP.md
+docs/audit/FILE_REVIEW_LEDGER.csv
+docs/audit/FUNCTION_CALLBACK_LEDGER.csv
+freqtrade/scripts/backtest.sh
+freqtrade/scripts/download_data.sh
+scripts/api_readiness.py
+scripts/binance_contract_drift.py
+scripts/run_validation_venv.py
+scripts/seed_source_registry.py
+services/common/backtest_pairs.py
+services/common/binance_public.py
+services/common/provider_budget_contract.py
+services/execution_sidecar/binance_contract_guard.py
+services/sharia_operator/__init__.py
+services/sharia_operator/source_review.py
+services/sharia_screener/guarded_main.py
+services/telegram_broker/bot.py
+tests/test_api_readiness.py
+tests/test_backtest_pair_gate.py
+tests/test_binance_filter_contract_20260822.py
+tests/test_oracle_capacity_contract.py
+tests/test_provider_budget_contract.py
+tests/test_seed_source_registry.py
+tests/test_sharia_operator_workflow.py
+tests/test_validation_runner.py
+
+External validation still required
+----------------------------------
+1. Oracle VM provisioning, ARM64 container execution, systemd operation,
+   resource/port coexistence, reboot, backup/restore, and soak evidence.
+2. Real Telegram owner-chat delivery using Oracle-only credentials.
+3. Read-only Binance/CoinGecko/CoinMarketCap preflight using Oracle-only keys.
+4. Authenticated Binance Spot TestNet lifecycle proof in the TestNet package.
+5. Fee/slippage-aware profitability evidence and separate human LIVE promotion.
+
+Nothing in this report certifies LIVE-money operation.
