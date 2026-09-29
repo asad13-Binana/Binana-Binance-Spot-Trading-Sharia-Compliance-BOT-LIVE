@@ -338,7 +338,7 @@ def confirm_button(label, action, args=None, *, style='danger'):
     return button
 
 
-# ---- V19.1 Sharia screening controls (master protocol 8.7) ----
+# ---- V19.3 Sharia screening controls (master protocol 8.7) ----
 def normalize_pair_input(text: str) -> tuple[str | None, str]:
     """Normalize 'BTC/USDT' or 'BTCUSDT' to the base asset; reject the rest."""
     candidate = str(text or '').strip().upper()
@@ -530,7 +530,7 @@ def _sharia_service_status() -> str:
             NOT_FATWA,
         ])
         return '\n'.join(lines)
-    lines = ['V19.1 Sharia screening service']
+    lines = ['V19.3 Sharia screening service']
     health_ready = False
     operational_ready = False
     operational_known = False
@@ -653,7 +653,7 @@ def _latest_sharia_report(base: str) -> str:
         if str(payload.get('base', '')).upper() != base:
             continue
         return '\n'.join([
-            f'V19.1 screening — {base}/USDT',
+            f'V19.3 screening — {base}/USDT',
             f'request: {payload.get("request_id")}',
             f'final_code: {payload.get("final_code")}',
             f'direct result: {payload.get("direct_result")}',
@@ -666,7 +666,7 @@ def _latest_sharia_report(base: str) -> str:
             (f'error: {payload.get("error")}' if payload.get('error') else ''),
             NOT_FATWA,
         ])
-    return f'No verified V19.1 screening result found for {base}/USDT yet.'
+    return f'No verified V19.3 screening result found for {base}/USDT yet.'
 
 
 def _latest_local_review_card(base: str) -> tuple[str, list[list[dict]] | None]:
@@ -706,7 +706,7 @@ def _latest_local_review_card(base: str) -> tuple[str, list[list[dict]] | None]:
                 if isinstance(item, dict)
             ]
             lines = [
-                f'V19.1 local evidence review - {base}/USDT',
+                f'V19.3 local evidence review - {base}/USDT',
                 f'disposition: {review.get("disposition")}',
                 f'promotable: {review.get("promotable") is True}',
                 f'scope review only: {review.get("scope_review_only") is True}',
