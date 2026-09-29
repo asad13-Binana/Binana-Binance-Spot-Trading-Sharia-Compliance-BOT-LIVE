@@ -19,7 +19,7 @@ from services.telegram_broker import bot
 
 def _candidate(base: str = 'EXP') -> dict:
     payload = {
-        'schema_version': 1,
+        'schema_version': 2,
         'base': base,
         'pair': f'{base}/USDT',
         'status': 'VERIFIED_CANDIDATE',
