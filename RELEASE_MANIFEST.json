@@ -125,8 +125,8 @@
       "size": 1330
     },
     "VALIDATION_STATUS.json": {
-      "sha256": "0b4f26e58a27f1ed7c0adea7da0dd36784c9d7e529f952c655095be0c2f24104",
-      "size": 6283
+      "sha256": "c7b1084ba51e185ef0e0d8d866c07ef3237b74741432c28f2390a7607e51f72a",
+      "size": 6624
     },
     "deploy/api_preflight.sh": {
       "sha256": "b0c63df16e2ee7fa2502498d7a72fbc871e51f13603654cb5bdc81bf084de220",
@@ -361,7 +361,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "1bbb261c3c8c0ee255bf5834a3155f57f1a54e988bcdcb6712ec5d81c08557ac",
+      "sha256": "3b6f9853ab60796795c932381a441eafa9a23ef259c07ca4115f18153a87e852",
       "size": 54232
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -369,8 +369,8 @@
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "9dd4eee954ac1ab1f121bdff53dcf6c0d2e89feec99a05174b15dcafd512d907",
-      "size": 328454
+      "sha256": "a5438e3d65939c8fec04468e10900448dd2fc9e57d306be7fa6a1edeb612b240",
+      "size": 328467
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -413,8 +413,8 @@
       "size": 5485
     },
     "docs/recovery/RECOVERY_STATUS_20260930.md": {
-      "sha256": "5be6bd38c28d1e948e8bc81f35667051a6727df9013da82386820631a0376621",
-      "size": 3539
+      "sha256": "224b2b8f761224ee9d98340a5dd416905c6a108a1e34e265617988e100f04c90",
+      "size": 4220
     },
     "freqtrade/.env.example": {
       "sha256": "72f2ec76ed2f1ec2aec733ed7f6e42aac97789438b16ed2496cab5d770887a7e",
@@ -609,7 +609,7 @@
       "size": 157
     },
     "monitoring/requirements-monitoring.lock": {
-      "sha256": "5be9dd0dbbf5cef0ac1f3c1f0c49515b163b952b20a0187294aec764875e87bf",
+      "sha256": "8d40b6865809eb07bd4376df343198d1ea97e4d625afbf32c98a34c4a9f625f2",
       "size": 52218
     },
     "monitoring/requirements-monitoring.txt": {
@@ -1265,8 +1265,8 @@
       "size": 18124
     },
     "tests/test_oracle_host_loss_resilience.py": {
-      "sha256": "8947af953a8acafdf0aa1f8c8cb57e078ae4919044cf91e50720a97aefc04762",
-      "size": 4865
+      "sha256": "22fc8be0f3b9beb3266d66240669ca0099858f2ab6f5d79a66dd4a6b965ed0b8",
+      "size": 4878
     },
     "tests/test_package_mode.py": {
       "sha256": "3289f0cc3c7c62a6b118c7046e23357e149b36ede959d10667c9ca119cc3d7e5",
