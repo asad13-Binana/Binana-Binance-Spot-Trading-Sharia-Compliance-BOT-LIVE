@@ -21,7 +21,7 @@
       "size": 1499
     },
     ".github/workflows/ci.yml": {
-      "sha256": "788cc9fc6950d6b501379c0e7db8bd458f38464e7f3359ba758254bca48b5909",
+      "sha256": "a44da2b1159fe0f75ac7ff1f4eb12f4e2903e7e497c30b69aa843b465b0f1edf",
       "size": 25580
     },
     ".gitignore": {
@@ -109,8 +109,8 @@
       "size": 1205
     },
     "README.md": {
-      "sha256": "9d5bafe81c66df280148db0bff943e10c8e0cd5dfebf0dfb9cb84b656565f2fa",
-      "size": 3903
+      "sha256": "b59ff5bd75e5768496baf3ecac67b77be437638e7aee803917f515e77c26dd4e",
+      "size": 4268
     },
     "RELEASE_MODE": {
       "sha256": "7a0c3ac0d35f7d3b985ef0e678fab3f36ef28c158cc62d095183e9589d084ae5",
@@ -361,8 +361,8 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "3b6f9853ab60796795c932381a441eafa9a23ef259c07ca4115f18153a87e852",
-      "size": 54232
+      "sha256": "670dde20fc1d382324db267838c319724aab768875ab1933b77b585357684d26",
+      "size": 54399
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
@@ -409,12 +409,16 @@
       "size": 11518
     },
     "docs/audit/V193_AUTHORIZED_TRANSITIONS.json": {
-      "sha256": "1c964bf66f83b9b9a3f2ba966e968d6f0f6d8d2eafec93c34d063f1e695dc9be",
-      "size": 5485
+      "sha256": "bbb4f811a5ed33616f9c4926b40a379c450e0883aca9745f05e57ba7df05acb5",
+      "size": 5592
     },
     "docs/recovery/RECOVERY_STATUS_20260930.md": {
-      "sha256": "224b2b8f761224ee9d98340a5dd416905c6a108a1e34e265617988e100f04c90",
-      "size": 4220
+      "sha256": "22d93a3f431b22013c700c01f0d803dc1706628fd77bc113644595172c44d5b1",
+      "size": 7139
+    },
+    "docs/recovery/REGISTRY_ADDITIONS_20260930.json": {
+      "sha256": "32a8a6fb9f7dba0a15f566052f9cd6e49ba360be47f71e8f7cbb5e187c813432",
+      "size": 3438
     },
     "freqtrade/.env.example": {
       "sha256": "72f2ec76ed2f1ec2aec733ed7f6e42aac97789438b16ed2496cab5d770887a7e",
@@ -1145,8 +1149,8 @@
       "size": 1
     },
     "shared/sharia/halal_coins.json": {
-      "sha256": "1bd43dc72d821d18d82f02afd5617a35f728d3b67f2ecfe7e19fdd2c0addeb87",
-      "size": 5398
+      "sha256": "e37edb914877fbd51742a858805f066d35674c267cc1d79ead2c637d7202da16",
+      "size": 6304
     },
     "shared/sharia/sharia_status.json": {
       "sha256": "e0d7b34b8411a7829a38618971708da9bda470244fc421fbdebecdae9ff10939",
@@ -1225,7 +1229,7 @@
       "size": 2780
     },
     "tests/test_clean_host_deployment.py": {
-      "sha256": "ad59be988ae87dac4a50af22f22889e8db42b8edbb4da24d377960106ade95ea",
+      "sha256": "722459fd32fe15a3a9a04f2e0250308280188d5d4aa394d17edc1ea410eed186",
       "size": 6685
     },
     "tests/test_codex_revision_j_hardening.py": {
@@ -1253,7 +1257,7 @@
       "size": 52962
     },
     "tests/test_manual_sharia_registry.py": {
-      "sha256": "a5784aa241620c8f98094acdba2e304fc95f17955e4abd5561887fdcf4c5759f",
+      "sha256": "9a81ea5ab7fa2609446a5d4e379d73fd420f557bbbb1f2a369a6f051306d5034",
       "size": 7893
     },
     "tests/test_oracle_capacity_contract.py": {
@@ -1261,7 +1265,7 @@
       "size": 1806
     },
     "tests/test_oracle_hardening_v2.py": {
-      "sha256": "1464b48c28065ab922e59a28bf9d51a59d0014a9e5129ff9593b00cc5cb7efce",
+      "sha256": "ba8b1ed071eae086691e612b89ac6fe93eef794570dd2fe1e8c4f29631d5c711",
       "size": 18124
     },
     "tests/test_oracle_host_loss_resilience.py": {
