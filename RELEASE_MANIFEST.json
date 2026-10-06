@@ -109,8 +109,8 @@
       "size": 1205
     },
     "README.md": {
-      "sha256": "b59ff5bd75e5768496baf3ecac67b77be437638e7aee803917f515e77c26dd4e",
-      "size": 4268
+      "sha256": "17a64e45233a07c08771408be60e6ac796262305d868d4b40936c40d4833914d",
+      "size": 4298
     },
     "RELEASE_MODE": {
       "sha256": "7a0c3ac0d35f7d3b985ef0e678fab3f36ef28c158cc62d095183e9589d084ae5",
@@ -361,8 +361,8 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "670dde20fc1d382324db267838c319724aab768875ab1933b77b585357684d26",
-      "size": 54399
+      "sha256": "079eea2cda152fc816611fb2ae9f9cb436c105b2a98338b16ea96d1a4ea5603e",
+      "size": 54565
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
@@ -415,6 +415,10 @@
     "docs/recovery/RECOVERY_STATUS_20260930.md": {
       "sha256": "22d93a3f431b22013c700c01f0d803dc1706628fd77bc113644595172c44d5b1",
       "size": 7139
+    },
+    "docs/recovery/RECOVERY_STATUS_20261007.md": {
+      "sha256": "a8ccda7bb1480f5995e4e93403c20d906ddc7d3aaa0dafc6a09ffa0d88a8be91",
+      "size": 1609
     },
     "docs/recovery/REGISTRY_ADDITIONS_20260930.json": {
       "sha256": "32a8a6fb9f7dba0a15f566052f9cd6e49ba360be47f71e8f7cbb5e187c813432",

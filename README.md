@@ -1,10 +1,10 @@
 # BINANA Binance Spot — LIVE package
 
-Latest update: **375 owner-listed symbols**, preserving the previous 305 and adding only 70 missing from the latest 177-symbol list. LIVE PR #24 is merged. Sharia v19.3 research changes remain a recovery candidate. No real-money deployment or live certification has been performed.
+Latest update: **375 owner-listed symbols**, preserving the previous 305 and adding only 70 missing from the latest 177-symbol list. LIVE PR #25 is merged and its main-branch CI passed. Sharia v19.3 research changes remain a recovery candidate. No real-money deployment or live certification has been performed.
 
 LIVE keeps its existing execution interlocks and deployment settings. Testnet owner patches are excluded from this package.
 
-See [current status and recent changes](docs/recovery/RECOVERY_STATUS_20260930.md) and [the additive registry record](docs/recovery/REGISTRY_ADDITIONS_20260930.json). Historical deployment and validation notes below do not certify the current candidate.
+See [current status and recent changes](docs/recovery/RECOVERY_STATUS_20261007.md) and [the additive registry record](docs/recovery/REGISTRY_ADDITIONS_20260930.json). Historical deployment and validation notes below do not certify the current candidate.
 
 ## Disclaimer and risk warning
 
