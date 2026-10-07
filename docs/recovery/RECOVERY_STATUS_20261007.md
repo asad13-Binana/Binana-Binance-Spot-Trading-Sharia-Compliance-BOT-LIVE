@@ -20,3 +20,7 @@ The new CI run detected newly published advisories affecting existing pins. Both
 Testnet PR #31 now records 15 successful authenticated validation-only requests (entry, take-profit and stop parameters for LTC, LINK, ADA, NEAR and PAXG), plus another 1.5 GB of verified backup compaction. The unchanged owner candidate is still not deployed, and Testnet trading remains paused with its recovery incident open. These API checks did not submit matching-engine orders and do not prove order-list activation, fills, protection recovery, active-position restart or soak acceptance. CoinGecko/CoinMarketCap runtime keys remain absent as of this check.
 
 The LIVE package remains on simulation defaults with its existing live-evidence gates. No Testnet-only recovery scripts, historical state mutations, deployment or order requests were applied to LIVE. PR #26 is merged; its merged-main CI 37539089165 passed. The Testnet source/evidence update is [PR #31](https://github.com/asad13-Binana/Binana-Binance-Spot-Trading-Sharia-Compliance-BOT-TestNet/pull/31).
+
+## Shared collector fix and deployment distinction
+
+The shared symbol validator now supports valid one-letter bases such as S and U while rejecting empty or malformed identities. Regression tests preserve atomic rejection. The AWS Testnet collector was also repaired and given adequate resources, but those host overlays belong to Testnet only. LIVE PRs #26 and #27 are merged, with successful main CI; no LIVE deployment or real-money certification occurred.

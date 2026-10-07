@@ -2188,6 +2188,7 @@ tests/test_spot_microstructure.py,test_non_core_launchers_leave_protected_source
 tests/test_spot_microstructure.py,test_missing_corrupt_stale_evidence_never_raises_or_claims_freshness,function,top-level-or-method,369,384,-,test
 tests/test_spot_microstructure.py,test_component_contains_no_futures_endpoint_credentials_or_order_methods,function,top-level-or-method,387,404,-,test
 tests/test_spot_microstructure.py,test_protected_strategy_is_not_imported_by_market_context,function,top-level-or-method,407,413,-,test
+tests/test_spot_microstructure.py,test_one_letter_spot_symbols_are_valid_and_empty_base_is_rejected,function,top-level-or-method,416,422,-,test
 tests/test_strategy_probe.py,_require_strategy_stack,function,top-level-or-method,29,38,-,test
 tests/test_strategy_probe.py,_load_probe,function,top-level-or-method,41,46,-,test
 tests/test_strategy_probe.py,StrategyProbeTests.setUpClass,function,top-level-or-method,52,57,classmethod,test

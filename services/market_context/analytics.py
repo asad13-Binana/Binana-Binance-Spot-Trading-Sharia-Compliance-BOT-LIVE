@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation
 
-SYMBOL_RE = re.compile(r"[A-Z0-9]{2,24}USDT")
+SYMBOL_RE = re.compile(r"[A-Z0-9]{1,24}USDT")
 WINDOWS = (10, 30, 60)
 MAX_SYMBOLS = 50
 

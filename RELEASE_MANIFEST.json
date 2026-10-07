@@ -109,8 +109,8 @@
       "size": 1205
     },
     "README.md": {
-      "sha256": "17a64e45233a07c08771408be60e6ac796262305d868d4b40936c40d4833914d",
-      "size": 4298
+      "sha256": "5bdad44c55fd2afffa0ba56b5dfa35c95e4fc2cd8ff8a9acc01a2e42e1e98895",
+      "size": 4325
     },
     "RELEASE_MODE": {
       "sha256": "7a0c3ac0d35f7d3b985ef0e678fab3f36ef28c158cc62d095183e9589d084ae5",
@@ -361,7 +361,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "08eeed788bb675263de98c2149f7720bb66a47e89a7825c13baeb13a05065c64",
+      "sha256": "5bec982d1fb9ed4ef176d6d4d232b6b5cb1e46c3a3e43b61ea135ffb2c390c62",
       "size": 54565
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -369,8 +369,8 @@
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "a5438e3d65939c8fec04468e10900448dd2fc9e57d306be7fa6a1edeb612b240",
-      "size": 328467
+      "sha256": "9b464320aa6fab21f8292ffab00adf897dbf3209ff21e97bb0c8faceff4cadef",
+      "size": 328611
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -417,8 +417,8 @@
       "size": 7139
     },
     "docs/recovery/RECOVERY_STATUS_20261007.md": {
-      "sha256": "a696d34b0a5cc905a71f86e00e683dcdd46b1ab8355baa6e14edfc3bb205f1eb",
-      "size": 3323
+      "sha256": "7c12e3c739fdc7ec7f049119422e648394be749a0bdd4b0e7c6270e4702c1f5c",
+      "size": 3784
     },
     "docs/recovery/REGISTRY_ADDITIONS_20260930.json": {
       "sha256": "32a8a6fb9f7dba0a15f566052f9cd6e49ba360be47f71e8f7cbb5e187c813432",
@@ -925,7 +925,7 @@
       "size": 340
     },
     "services/market_context/analytics.py": {
-      "sha256": "a25bb94407c65b71cef1f103a9ba13c407dcdc88c87a64ecaa9d7f42e36ddad9",
+      "sha256": "eaa84b11527a55e2331a9ad27a0db582a2264ab25e6258f1b06f73d3b9758324",
       "size": 17359
     },
     "services/market_context/evidence.py": {
@@ -1333,8 +1333,8 @@
       "size": 14608
     },
     "tests/test_spot_microstructure.py": {
-      "sha256": "31e638b192293b488eb1daa87a5ed99278e46697954ea08b80ca2fee7f760f4d",
-      "size": 14897
+      "sha256": "d7663cad7c592f65cfbc18ebafb91bd3bc13cca500f981556da58b739d41f9b5",
+      "size": 15320
     },
     "tests/test_strategy_probe.py": {
       "sha256": "2486ed14f31be5ea87fecb9b1cd3e884135dfc82218e395cb8bfd8012e025d5f",
