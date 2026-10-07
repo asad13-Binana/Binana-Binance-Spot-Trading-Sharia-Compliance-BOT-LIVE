@@ -361,7 +361,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "3eb2e44bc3af9d3b397892f60b5ffa89f78c66f924762c60cc41aaa3482e6cac",
+      "sha256": "08eeed788bb675263de98c2149f7720bb66a47e89a7825c13baeb13a05065c64",
       "size": 54565
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -417,8 +417,8 @@
       "size": 7139
     },
     "docs/recovery/RECOVERY_STATUS_20261007.md": {
-      "sha256": "d7b4b3cf5b8d99decf0b6036c90d29429dedf1d3183737a5c0c7ec45d8e5ea9e",
-      "size": 2304
+      "sha256": "a696d34b0a5cc905a71f86e00e683dcdd46b1ab8355baa6e14edfc3bb205f1eb",
+      "size": 3323
     },
     "docs/recovery/REGISTRY_ADDITIONS_20260930.json": {
       "sha256": "32a8a6fb9f7dba0a15f566052f9cd6e49ba360be47f71e8f7cbb5e187c813432",

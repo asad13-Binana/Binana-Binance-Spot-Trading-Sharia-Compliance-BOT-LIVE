@@ -13,3 +13,10 @@ See the [Testnet recovery record](https://github.com/asad13-Binana/Binana-Binanc
 ## Dependency audit follow-up
 
 The new CI run detected newly published advisories affecting existing pins. Both packages now pin multidict 6.9.1, pypdf 6.19.0, urllib3 2.8.0 and monitoring PyJWT 2.15.0 with upstream PyPI distribution hashes. Both exact lock-file audits pass after the updates. Upstream references: [multidict](https://github.com/aio-libs/multidict/security/advisories/GHSA-54p9-h82j-f925), [pypdf](https://github.com/py-pdf/pypdf/releases/tag/6.19.0), [urllib3](https://github.com/urllib3/urllib3/releases/tag/2.8.0), [PyJWT](https://github.com/jpadilla/pyjwt/security/advisories/GHSA-x33g-cr3x-6449). A passing source audit does not update older running images.
+
+
+## Testnet qualification update — October 7
+
+Testnet PR #31 now records 15 successful authenticated validation-only requests (entry, take-profit and stop parameters for LTC, LINK, ADA, NEAR and PAXG), plus another 1.5 GB of verified backup compaction. The unchanged owner candidate is still not deployed, and Testnet trading remains paused with its recovery incident open. These API checks did not submit matching-engine orders and do not prove order-list activation, fills, protection recovery, active-position restart or soak acceptance. CoinGecko/CoinMarketCap runtime keys remain absent as of this check.
+
+The LIVE package remains on simulation defaults with its existing live-evidence gates. No Testnet-only recovery scripts, historical state mutations, deployment or order requests were applied to LIVE. PR #26 is merged; its merged-main CI 37539089165 passed. The Testnet source/evidence update is [PR #31](https://github.com/asad13-Binana/Binana-Binance-Spot-Trading-Sharia-Compliance-BOT-TestNet/pull/31).
