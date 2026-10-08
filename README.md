@@ -1,6 +1,6 @@
 # BINANA Binance Spot — LIVE package
 
-Latest update (October 7, 2026): LIVE PRs #26 and #27 are merged; their checks and the latest merged-main checks passed. This package contains **375 owner-listed symbols**, the supplied Sharia v19.3 controller, and the shared one-letter asset validation fix discovered on AWS Testnet. No real-money runtime has been deployed or certified.
+Latest update (October 8, 2026): LIVE PRs #26 and #27 are merged; their checks and the latest merged-main checks passed. This package contains **375 owner-listed symbols**, the supplied Sharia v19.3 controller, and shared support for one-letter assets through the market collector, signal evidence and monitoring API. No real-money runtime has been deployed or certified.
 
 LIVE keeps its existing execution interlocks and deployment settings. Testnet owner patches are excluded from this package.
 
@@ -69,7 +69,7 @@ extracted deterministic artifact.
 - Research decisions require the supplied v19.3 controller and signed owner approval; the operational manual registry is a separate gate.
 - Inter-service messages are HMAC-authenticated and release-bound.
 - BNB and BTC are excluded as bases; no BNB fee dependency.
-- Trading secrets exist only in Oracle's mode-600 private env, never in Git.
+- Trading secrets belong in the deployment host's mode-600 private environment, never in Git.
 
 ## Documentation
 

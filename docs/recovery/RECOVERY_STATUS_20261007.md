@@ -24,3 +24,7 @@ The LIVE package remains on simulation defaults with its existing live-evidence 
 ## Shared collector fix and deployment distinction
 
 The shared symbol validator now supports valid one-letter bases such as S and U while rejecting empty or malformed identities. Regression tests preserve atomic rejection. The AWS Testnet collector was also repaired and given adequate resources, but those host overlays belong to Testnet only. LIVE PRs #26 and #27 are merged, with successful main CI; no LIVE deployment or real-money certification occurred.
+
+## October 8: downstream one-letter asset support
+
+LIVE PR #28 review found that signal evidence and both monitoring validators still rejected S/USDT and U/USDT. Regression tests reproduced the four downstream failures. All three validators now accept bounded one-character bases, preserving bearer authentication, invalid-input rejection and advisory-only output. Both affected suites pass: 81 tests, one platform-specific skip. This is a shared service correction; no LIVE runtime deployment or trading qualification is claimed.
