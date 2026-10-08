@@ -282,6 +282,21 @@ def test_signal_evidence_is_fresh_bounded_and_explicitly_non_authorizing(tmp_pat
     assert evidence["record"]["top_of_book_liquidity"]["spread_bps"] == "200"
 
 
+
+@pytest.mark.parametrize("symbol", ["SUSDT", "UUSDT"])
+def test_one_letter_signal_evidence_reads_published_snapshot(tmp_path, symbol):
+    analytics = SpotMicrostructureAnalytics()
+    analytics.set_symbols({symbol})
+    snapshot = analytics.snapshot(now_mono=100, now_wall=1000)
+    path = tmp_path / "current.json"
+    path.write_text(json.dumps(snapshot), encoding="utf-8")
+    evidence = capture_signal_evidence(path, symbol, now=1001)
+    assert evidence["available"] is True
+    assert evidence["symbol"] == symbol
+    assert evidence["reason"] == "stale_or_incomplete"
+    assert evidence["used_for_trade_decision"] is False
+
+
 def test_signal_observer_records_authenticated_evidence_without_changing_result(
     tmp_path, monkeypatch
 ):
@@ -411,3 +426,12 @@ def test_protected_strategy_is_not_imported_by_market_context():
     )
     assert "IctSmcStrategy" not in source
     assert "legacy_core" not in source
+
+
+def test_one_letter_spot_symbols_are_valid_and_empty_base_is_rejected():
+    from services.market_context.analytics import MarketDataError
+    analytics = SpotMicrostructureAnalytics()
+    assert set(analytics.set_symbols({"SUSDT", "UUSDT", "LTCUSDT"})) == {"SUSDT", "UUSDT", "LTCUSDT"}
+    with pytest.raises(MarketDataError):
+        analytics.set_symbols({"USDT"})
+    assert analytics.snapshot()["symbol_count"] == 3
