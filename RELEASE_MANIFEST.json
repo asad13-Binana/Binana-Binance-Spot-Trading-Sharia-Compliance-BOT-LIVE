@@ -129,12 +129,12 @@
       "size": 6624
     },
     "deploy/api_preflight.sh": {
-      "sha256": "b0c63df16e2ee7fa2502498d7a72fbc871e51f13603654cb5bdc81bf084de220",
-      "size": 4345
+      "sha256": "6fc94059b87d5f9926cb809c73e01d53000a8b900510a9b91ef90978b61546c9",
+      "size": 4346
     },
     "deploy/backup_state.sh": {
-      "sha256": "c00941340d06a963093c3e6dfdc170aab3b06290f06680c879e0710aaa88e258",
-      "size": 2567
+      "sha256": "f2b0b4e4edcb2658c0f8d77ea61b243f46611bc39f6432408c29e1bc3f64fcb7",
+      "size": 2675
     },
     "deploy/binana-approve-release.sh": {
       "sha256": "1d755761845320d93f60d5e3a339f330f21621e439a8590ae9272dc4eba9eace",
@@ -231,6 +231,10 @@
     "docs/API_READINESS_RUNBOOK.md": {
       "sha256": "c07ed228b5d8d18e8f6c9e6ac84e070a2ffe10c6aa0172da527383eff76f66ca",
       "size": 3395
+    },
+    "docs/AUDIT_REPAIR_20261012.md": {
+      "sha256": "83c2e1f95e1c252c006f9b4f6db4220239c1fddef9d554337bd902801502a1c2",
+      "size": 1215
     },
     "docs/BINANA_LIVE_LOCAL_ORACLE_MIRROR_REPORT_2026-08-28.txt": {
       "sha256": "9941ab607b45cb0a11cc33ee69c8be1ba78b6fa433ad6cf0801864955cbf850a",
@@ -361,16 +365,16 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "e67c791c035db249cbabbbdcd8b8aecfc0ceda6941917c6e4aabb44e0bac043a",
-      "size": 54565
+      "sha256": "08e83570d0e6318521be7cb665c9964d6c6376d4dd22fc1723843b6c149375ba",
+      "size": 55014
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "2dfa22e0f990f2085f1d670186b1ec6af6a92409376137ba9231fa5c6e217267",
-      "size": 328865
+      "sha256": "b4860604109c320d18ee88183555f23b38bb26b232cf1e2960dd35c48e5cf95e",
+      "size": 329321
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -725,8 +729,8 @@
       "size": 614
     },
     "scripts/api_readiness.py": {
-      "sha256": "32c0e81996deb1647a8a31dd59dd0cab8b145ab47e180b4d70c9ac82081c0df9",
-      "size": 11588
+      "sha256": "65fcd45e6c8ec3485f8bd85ddf9aeb955ae140a994e5faf0710ada7f5582cc32",
+      "size": 11590
     },
     "scripts/backup_integrity.py": {
       "sha256": "5742144033027d29312cbfc246dfa4f5ef4b69ff5ef23b1f963c11b4d75ffb98",
@@ -1224,6 +1228,10 @@
       "sha256": "024065da4c9cf768b5dc9f8cdb74de51e53670423bb4b013b9989c796dc985ce",
       "size": 5566
     },
+    "tests/test_backup_selection.py": {
+      "sha256": "a566f1f77c9b9da3156600e568a56d11e4eea7f0c67837d7508b54d7df3f15bf",
+      "size": 1251
+    },
     "tests/test_binance_filter_contract_20260822.py": {
       "sha256": "ad2bf62191b0ebdbea86acd2eb72b4dbd5ba5529bc55c980709aacf2844cdf0d",
       "size": 22162
@@ -1259,6 +1267,10 @@
     "tests/test_local_sharia_backend.py": {
       "sha256": "7b3246dcba687edfa49f616fe702142fe9778b8bbca6f9156857f94a42501e28",
       "size": 52962
+    },
+    "tests/test_manual_provider_defaults.py": {
+      "sha256": "249e41d230c016e8f7b901b11fb46afbae05f3b981b406c2f1b6b8f9a0d8124e",
+      "size": 825
     },
     "tests/test_manual_sharia_registry.py": {
       "sha256": "9a81ea5ab7fa2609446a5d4e379d73fd420f557bbbb1f2a369a6f051306d5034",

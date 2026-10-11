@@ -1548,6 +1548,7 @@ tests/test_backup_recovery_20260830.py,test_no_database_no_vacuous_pass,function
 tests/test_backup_recovery_20260830.py,test_checksum_duplicates_traversal_and_corruption,function,top-level-or-method,110,123,-,test
 tests/test_backup_recovery_20260830.py,test_tmpfs_is_one_valid_mount,function,top-level-or-method,126,131,-,test
 tests/test_backup_recovery_20260830.py,test_backup_timestamp_discovery_and_logging_do_not_skip_safety,function,top-level-or-method,134,142,-,test
+tests/test_backup_selection.py,BackupSelection.test_rotating_backups_are_excluded_but_authoritative_databases_remain,function,top-level-or-method,12,25,-,test
 tests/test_binance_filter_contract_20260822.py,_filters,function,top-level-or-method,37,49,-,test
 tests/test_binance_filter_contract_20260822.py,_Public.__init__,function,top-level-or-method,55,59,-,test
 tests/test_binance_filter_contract_20260822.py,_Public.exchange_info,function,top-level-or-method,61,67,-,test
@@ -1852,6 +1853,8 @@ tests/test_local_sharia_backend.py,EngineAuthorityTests.test_no_disposition_is_a
 tests/test_local_sharia_backend.py,EngineAuthorityTests.test_clean_document_only_ever_proposes,function,top-level-or-method,1085,1091,-,test
 tests/test_local_sharia_backend.py,EngineAuthorityTests.test_nothing_retrieved_fails_closed,function,top-level-or-method,1093,1095,-,test
 tests/test_local_sharia_backend.py,EngineAuthorityTests.test_failed_fetch_fails_closed,function,top-level-or-method,1097,1099,-,test
+tests/test_manual_provider_defaults.py,ManualProviderDefaults.test_manual_default_is_credential_free,function,top-level-or-method,7,11,-,test
+tests/test_manual_provider_defaults.py,ManualProviderDefaults.test_explicit_discovery_still_requires_credentials,function,top-level-or-method,13,17,-,test
 tests/test_manual_sharia_registry.py,ManualRegistryContractTests._payload,function,top-level-or-method,27,35,-,test
 tests/test_manual_sharia_registry.py,ManualRegistryContractTests._write,function,top-level-or-method,37,40,-,test
 tests/test_manual_sharia_registry.py,ManualRegistryContractTests.test_shipped_owner_registry_is_current_sorted_and_can_build_deny_all_bootstrap,function,top-level-or-method,42,56,-,test
