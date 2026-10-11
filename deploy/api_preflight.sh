@@ -32,7 +32,7 @@ config=$(printf '%s\0' \
   "${VALUES[COINMARKETCAP_API_KEY]:-${VALUES[CMC_API_KEY]:-}}" \
   "${VALUES[ENABLE_COINGECKO_SIGNALS]:-false}" \
   "${VALUES[ENABLE_CMC_TRENDING]:-false}" \
-  "${VALUES[SHARIA_AUTO_SOURCE_DISCOVERY_ENABLED]:-true}" | python3 -c '
+  "${VALUES[SHARIA_AUTO_SOURCE_DISCOVERY_ENABLED]:-false}" | python3 -c '
 import json, sys
 names = (
     "BINANCE_API_KEY", "BINANCE_API_SECRET", "TELEGRAM_BOT_TOKEN",
