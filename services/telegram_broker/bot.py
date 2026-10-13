@@ -1375,6 +1375,34 @@ def _settings():
     }, indent=2)
 
 
+def _current_deployment():
+    """Observe this installation; a historical rollout is not current health."""
+    response = ft_call('GET', '/show_config')
+    cfg = response.get('data') if isinstance(response, dict) and response.get('ok') is True else None
+    cfg = cfg if isinstance(cfg, dict) else {}
+    health = read_json(RUNTIME / 'sidecar_health.json', {})
+    health = health if isinstance(health, dict) else {}
+    try:
+        fresh = 0 <= time.time() - float(health['ts']) < 180
+    except (KeyError, ValueError, TypeError, OverflowError):
+        fresh = False
+    return json.dumps({
+        'observation': 'current runtime; not release certification',
+        'environment': BOT_ENVIRONMENT,
+        'release': _release_label(),
+        'installed_release_hash': envelope.installed_release_hash(),
+        'freqtrade_state': str(cfg.get('state', 'UNKNOWN')).upper(),
+        'strategy': cfg.get('strategy', 'UNKNOWN'),
+        'execution_mode': health.get('execution_mode', 'UNKNOWN') if fresh else 'UNKNOWN',
+        'entries_enabled': health.get('entries_enabled') if fresh else None,
+        'trading_ready': health.get('trading_ready') if fresh else None,
+        'safety_halts': health.get('safety_halts', {}) if fresh else None,
+        'runtime_safety_faults': health.get('runtime_safety_faults', {}) if fresh else None,
+        'readiness_blockers': health.get('readiness_blockers', []) if fresh else ['sidecar_health_stale_or_unavailable'],
+        'observed_at_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+    }, indent=2)[:3800]
+
+
 def _validation_status():
     candidates = [RUNTIME / 'validation_status.json', Path('/app/VALIDATION_STATUS.json')]
     for path in candidates:
@@ -1549,7 +1577,7 @@ def route(action, chat, message_id=None):
             [[{'text': '⬅️ Sharia menu', 'callback_data': 'do|menu_sharia'},
               {'text': '🏠 Home', 'callback_data': 'do|home'}]])
     elif action == 'deploy':
-        send(json.dumps(read_json(RUNTIME / 'deployment_status.json', {}), indent=2), chat)
+        send(_current_deployment(), chat)
     elif action == 'last_signal':
         send(_latest_signal(), chat)
     elif action == 'signal_history':

@@ -1,6 +1,6 @@
 # BINANA Binance Spot — LIVE package
 
-Latest update (October 8, 2026): LIVE PRs #26 and #27 are merged; their checks and the latest merged-main checks passed. This package contains **375 owner-listed symbols**, the supplied Sharia v19.3 controller, and shared support for one-letter assets through the market collector, signal evidence and monitoring API. No real-money runtime has been deployed or certified.
+Latest maintenance (October 14, 2026): the shared Deployment view reports current authenticated runtime state and fresh sidecar evidence, including safety halts and runtime faults. LIVE PR #29 was merged on October 12; this follow-up retains the existing strategy and LIVE interlocks. No real-money runtime has been deployed or certified. See [the AWS/repository comparison](docs/recovery/RUNTIME_PARITY_20261014.md).
 
 LIVE keeps its existing execution interlocks and deployment settings. Testnet owner patches are excluded from this package.
 

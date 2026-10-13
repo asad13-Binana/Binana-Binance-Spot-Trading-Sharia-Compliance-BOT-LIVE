@@ -109,8 +109,8 @@
       "size": 1205
     },
     "README.md": {
-      "sha256": "1d946b560a1f07037730ca31e659402c7c0d3a04eb4b7acda291837283cde64f",
-      "size": 4375
+      "sha256": "26da7aa23883b93ccf29cd264c81dd9b54889f34964bb473e756b8523bbff63f",
+      "size": 4421
     },
     "RELEASE_MODE": {
       "sha256": "7a0c3ac0d35f7d3b985ef0e678fab3f36ef28c158cc62d095183e9589d084ae5",
@@ -365,16 +365,16 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "08e83570d0e6318521be7cb665c9964d6c6376d4dd22fc1723843b6c149375ba",
-      "size": 55014
+      "sha256": "1fda72a08e8d1fc198009578f61bc8bde12541d548e274965d76d5b47f3a3d3c",
+      "size": 55322
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "b4860604109c320d18ee88183555f23b38bb26b232cf1e2960dd35c48e5cf95e",
-      "size": 329321
+      "sha256": "c600b75ee8dc9eb53e533e67b7c90bcedcf9d536168c91376c5d2fe46dedb373",
+      "size": 329938
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -427,6 +427,10 @@
     "docs/recovery/REGISTRY_ADDITIONS_20260930.json": {
       "sha256": "32a8a6fb9f7dba0a15f566052f9cd6e49ba360be47f71e8f7cbb5e187c813432",
       "size": 3438
+    },
+    "docs/recovery/RUNTIME_PARITY_20261014.md": {
+      "sha256": "a51831e84225e167b53661b5c36063d9636f90eb704ffc7a049049f1c002bea0",
+      "size": 5512
     },
     "freqtrade/.env.example": {
       "sha256": "72f2ec76ed2f1ec2aec733ed7f6e42aac97789438b16ed2496cab5d770887a7e",
@@ -1065,8 +1069,8 @@
       "size": 297
     },
     "services/telegram_broker/bot.py": {
-      "sha256": "a579fff7afe51151680e75b9f4bb5d1db288fa99055119b9b75235f58a8bb732",
-      "size": 85386
+      "sha256": "45db6e015836730585320a8b014f5770bb86fcdc9e6fe290cbfb7689a3ce9b9c",
+      "size": 86904
     },
     "services/telegram_broker/callbacks.py": {
       "sha256": "1f2932fa7fa64ee70a783fae5f5c5bf86af9b0dced8f8f9b43266d8d55391ec4",
@@ -1247,6 +1251,10 @@
     "tests/test_codex_revision_j_hardening.py": {
       "sha256": "119d4cbf7b1b60db1b81a53dd9f561dc1bf9ef6c59c4ded09c5d37e2d669745f",
       "size": 18836
+    },
+    "tests/test_deployment_view.py": {
+      "sha256": "a431705cc5addec76969ba1fc499e702bf2a29924cdb983e5a04bc366e3437d3",
+      "size": 2824
     },
     "tests/test_external_signals.py": {
       "sha256": "77d63c4702839303d168972bfe0f65a381c072e6f92ce1096188389726a8294a",
