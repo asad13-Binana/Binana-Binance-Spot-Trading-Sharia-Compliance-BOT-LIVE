@@ -31,6 +31,7 @@ def display(*, stale=False, unavailable=False, health_changes=None):
              and x.name in {'route', '_current_deployment'}]
     exec(compile(ast.Module(body=nodes, type_ignores=[]), str(SOURCE), 'exec'), ns)
     ns['route']('deploy', 'owner')
+    assert len(sent[-1]) <= 3800, 'Deployment response exceeds the Telegram budget'
     return json.loads(sent[-1])
 
 
@@ -55,6 +56,18 @@ class DeploymentView(unittest.TestCase):
             'runtime_safety_faults': {'database': 'unavailable'}})
         self.assertEqual(result.get('safety_halts'), {'reconcile': 'pending'})
         self.assertEqual(result.get('runtime_safety_faults'), {'database': 'unavailable'})
+
+    def test_verbose_faults_keep_valid_json_and_all_status_fields(self):
+        result = display(health_changes={
+            'safety_halts': {str(i): 'reconciliation ' * 100 for i in range(20)},
+            'runtime_safety_faults': {'database': '\u26a0' * 5000},
+            'readiness_blockers': ['NEEDS_RECONCILIATION'],
+        })
+        self.assertEqual(result['readiness_blockers'], ['NEEDS_RECONCILIATION'])
+        self.assertIn('observed_at_utc', result)
+        self.assertEqual(result['freqtrade_state'], 'STOPPED')
+        self.assertTrue(result['safety_halts']['truncated'])
+        self.assertTrue(result['runtime_safety_faults']['truncated'])
 
 
 if __name__ == '__main__':

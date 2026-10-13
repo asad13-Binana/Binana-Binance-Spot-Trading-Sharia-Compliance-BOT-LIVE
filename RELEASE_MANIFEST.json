@@ -365,7 +365,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "1fda72a08e8d1fc198009578f61bc8bde12541d548e274965d76d5b47f3a3d3c",
+      "sha256": "1f10a9f72e138c033def524ff0b976df9c28278b3446358f9662a7e0dc28091b",
       "size": 55322
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -373,8 +373,8 @@
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "c600b75ee8dc9eb53e533e67b7c90bcedcf9d536168c91376c5d2fe46dedb373",
-      "size": 329938
+      "sha256": "7b3b9bb05c899352fca2a3ba4ad2c7dee1b9b3104af8bc5b4453e7ddd286c48a",
+      "size": 330187
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -429,8 +429,8 @@
       "size": 3438
     },
     "docs/recovery/RUNTIME_PARITY_20261014.md": {
-      "sha256": "a51831e84225e167b53661b5c36063d9636f90eb704ffc7a049049f1c002bea0",
-      "size": 5512
+      "sha256": "8a067d746e382c5ea274838fc66e8e307447bb6087411fd464b7ef8bf3ce271c",
+      "size": 5862
     },
     "freqtrade/.env.example": {
       "sha256": "72f2ec76ed2f1ec2aec733ed7f6e42aac97789438b16ed2496cab5d770887a7e",
@@ -1069,8 +1069,8 @@
       "size": 297
     },
     "services/telegram_broker/bot.py": {
-      "sha256": "45db6e015836730585320a8b014f5770bb86fcdc9e6fe290cbfb7689a3ce9b9c",
-      "size": 86904
+      "sha256": "8bbbe1a0cec515faf19baa48dd659d58aa1556e3275304cc10a3041a0ee3a2a0",
+      "size": 87487
     },
     "services/telegram_broker/callbacks.py": {
       "sha256": "1f2932fa7fa64ee70a783fae5f5c5bf86af9b0dced8f8f9b43266d8d55391ec4",
@@ -1253,8 +1253,8 @@
       "size": 18836
     },
     "tests/test_deployment_view.py": {
-      "sha256": "a431705cc5addec76969ba1fc499e702bf2a29924cdb983e5a04bc366e3437d3",
-      "size": 2824
+      "sha256": "5d641dedeada0e82106a1f3e3c1ea512c29b857e48ed5314fa0ad7e94137f25a",
+      "size": 3569
     },
     "tests/test_external_signals.py": {
       "sha256": "77d63c4702839303d168972bfe0f65a381c072e6f92ce1096188389726a8294a",
