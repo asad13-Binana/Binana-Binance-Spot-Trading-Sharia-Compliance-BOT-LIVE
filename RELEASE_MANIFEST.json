@@ -365,7 +365,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "1f10a9f72e138c033def524ff0b976df9c28278b3446358f9662a7e0dc28091b",
+      "sha256": "e4295edf0cf3ef8c72d1d18a28cc1e17f95c999b9e805c40a5b9ba19655d0fdf",
       "size": 55322
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -429,8 +429,8 @@
       "size": 3438
     },
     "docs/recovery/RUNTIME_PARITY_20261014.md": {
-      "sha256": "8a067d746e382c5ea274838fc66e8e307447bb6087411fd464b7ef8bf3ce271c",
-      "size": 5862
+      "sha256": "193df0a5c1d3537d775f3e1eff20ab666e793ae748b3857907c0424a256ac87d",
+      "size": 7415
     },
     "freqtrade/.env.example": {
       "sha256": "72f2ec76ed2f1ec2aec733ed7f6e42aac97789438b16ed2496cab5d770887a7e",
