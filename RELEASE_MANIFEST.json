@@ -21,7 +21,7 @@
       "size": 1499
     },
     ".github/workflows/ci.yml": {
-      "sha256": "a44da2b1159fe0f75ac7ff1f4eb12f4e2903e7e497c30b69aa843b465b0f1edf",
+      "sha256": "143bda3f82d3c37f6d050fd3c43b4a491e1296296862b94bce71b878b7d95f5b",
       "size": 25580
     },
     ".gitignore": {
@@ -53,7 +53,7 @@
       "size": 2171
     },
     "Dockerfile.freqtrade": {
-      "sha256": "b94537d1d5cc1b4c2924f0af844e8dee5f91d819fba19bd2a4e149c6b6f2f4e0",
+      "sha256": "6e876ba68e53b97075ad6aab244a6969818a6d51d80893232ba726b0db717215",
       "size": 771
     },
     "Dockerfile.services": {
@@ -276,6 +276,10 @@
       "sha256": "2b71cee27e376acde8a6c191a5aee78de1d04587ea5ac9f2b140afd2a3d45015",
       "size": 2915
     },
+    "docs/FREQTRADE_2026_9_SOURCE_UPDATE_2026-10-16.md": {
+      "sha256": "fdead3ffbb909ecf09ae5521c8c7254654cb65c02266671493d300938467d93d",
+      "size": 1605
+    },
     "docs/GITHUB_ORACLE_DEPLOYMENT.md": {
       "sha256": "54d8a177246f69b9c5727e26e5155e5607638f7434ca5b79c260ddb57b7d2c7e",
       "size": 6083
@@ -365,8 +369,8 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "e4295edf0cf3ef8c72d1d18a28cc1e17f95c999b9e805c40a5b9ba19655d0fdf",
-      "size": 55322
+      "sha256": "8d2c1ab69783c05e198a27f67c94051cdb4ab1e365c1269ebdd4764fa04e0785",
+      "size": 55496
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
@@ -465,7 +469,7 @@
       "size": 214
     },
     "freqtrade/docker-compose.yml": {
-      "sha256": "3daf9d17a9942a75e73ad3cbceb13e406f4249484ad3967d5d3d1e1cb596d832",
+      "sha256": "7ae192c36cd354dd9a6b18ffa73aaaaf127cf53b0b3158de4b85f0cffafbba4e",
       "size": 728
     },
     "freqtrade/scripts/backtest.sh": {
@@ -761,7 +765,7 @@
       "size": 1356
     },
     "scripts/resolve_image_digests.sh": {
-      "sha256": "ba9fa2a8cd11934d0f23951f81d70793bad1411c813866285103e1b70f573f39",
+      "sha256": "d7c787671a5bdc0b0d2af56fd5662070eea205758add8066d2219dc7d7d6bd28",
       "size": 1198
     },
     "scripts/run_legacy_selftests.sh": {
@@ -1241,11 +1245,11 @@
       "size": 22162
     },
     "tests/test_ci_evidence_status.py": {
-      "sha256": "d55bbbd1646c2598980321e026be8f70bf2fd75b0a9cdacdeb318c0456715974",
+      "sha256": "82fe2fcbb6f9286088ba10911e9c0de9b808132abbf8747d5f5edaf7d270e7f6",
       "size": 2780
     },
     "tests/test_clean_host_deployment.py": {
-      "sha256": "722459fd32fe15a3a9a04f2e0250308280188d5d4aa394d17edc1ea410eed186",
+      "sha256": "d33c6f223ee04e5ef154a7d78b2d42fef6a322c1e90db23fe21d5215a3adbeb2",
       "size": 6685
     },
     "tests/test_codex_revision_j_hardening.py": {
@@ -1357,11 +1361,11 @@
       "size": 15955
     },
     "tests/test_strategy_probe.py": {
-      "sha256": "2486ed14f31be5ea87fecb9b1cd3e884135dfc82218e395cb8bfd8012e025d5f",
+      "sha256": "924df2971f2810ef22b31c69fe8a0aa9c3479e234526e1134799a67a1ad64357",
       "size": 4458
     },
     "tests/test_supply_chain_gate.py": {
-      "sha256": "7bf8541530429e6295e48cf8e32b28b202803cadc53556ef4812c8cdb5242776",
+      "sha256": "7c705f6f9b61da649e5c6465276c640bfe49193ed1aeac07a35218d2d6d4e179",
       "size": 4169
     },
     "tests/test_universe_selection_hardening.py": {
@@ -1401,7 +1405,7 @@
       "size": 21319
     },
     "tests/test_workflow_graph.py": {
-      "sha256": "bb970e04d3c93deea1e34f3955697a0bbfc19dd386df209e54abd2c468105ae5",
+      "sha256": "faabce6d5e9953b57228a2d2bea47f02551d88356cc11ba5fe95b5b71ebe306a",
       "size": 7738
     }
   },
