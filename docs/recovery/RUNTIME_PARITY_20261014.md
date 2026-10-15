@@ -2,6 +2,14 @@
 
 Times below use Asia/Karachi (UTC+5). This record distinguishes source publication, an installed image, runtime readiness and strategy signals.
 
+## October 15 continuation
+
+LIVE PR #30 is merged at `b4ef29c08476f19e278dfc3ee3c28edcc3557fee`, including the shared current Deployment display, safety-field preservation and four regressions. No LIVE runtime or account was accessed.
+
+The AWS Testnet owner was independently rechecked at 17:29:55 on October 15: RUNNING, release approved, no release blockers and no open positions. Subsequent journal evidence showed fourteen native candidates after the earlier resume; seven were rejected by existing bullish-flow rules and seven by confluence rules. Thus the earlier October 14 observation of no fresh candidate no longer describes the full interval. All 120 currently active pairs had fresh analyzed candles. Admission policy and strategy thresholds were preserved.
+
+Testnet PR #39 added a clean public-source owner build and the missing custom exchange export. PR #40 added current-account candidate/decision history and compatibility with the established AWS container user/executable. Both are merged with passing checks. Those owner-specific files belong to the Testnet NFI architecture; the LIVE root strategy and order-owning sidecar are not replaced by a Testnet-only owner. The independent owner image still requires image-bound exchange acceptance and private account configuration before any new host can trade. Current AWS deployment receipts are maintained in the [Testnet release report](https://github.com/asad13-Binana/Binana-Binance-Spot-Trading-Sharia-Compliance-BOT-TestNet/blob/main/docs/recovery/AWS_CLEAN_RELEASE_20261015.md).
+
 ## Verified AWS state
 
 The accepted Binance Spot Testnet owner resumed at 00:56:13 on 14 October. The running image is `sha256:7b12004b889ad49384c310735bde26c93721300c936c94576f685ff079984a12` (`completion-20261013-r2`). Authenticated owner observations during this review showed RUNNING, release approved, no release blockers and no open positions. The owner container has not been restarted or paused during the display repair.
