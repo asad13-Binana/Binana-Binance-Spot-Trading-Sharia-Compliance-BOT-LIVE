@@ -289,8 +289,8 @@
       "size": 2785
     },
     "docs/IMAGE_DIGEST_PINNING.md": {
-      "sha256": "3bb71f0363e1e13fb4b36f00aa4b372526984cfe438e6d66078a2a381f0cf7ef",
-      "size": 1905
+      "sha256": "739e555691d05f8c0afb7792a86bb34e5f86a7a829d096d1d0da88fe0dc9e331",
+      "size": 1947
     },
     "docs/LIVE_PROMOTION_CHECKLIST.md": {
       "sha256": "de2f34c3783d3453923bd2d403bbab997a2d7869df477a34e080b2d3492688eb",
@@ -369,7 +369,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "6c0cb35fa68a2e1fc9b5a5b705f95ce4d07ec0d4114a2e1bab075df286119c09",
+      "sha256": "40a05fcff253117696ca8595495a7a4e600073fc0d1640bb5f4de481d2f05354",
       "size": 55817
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
