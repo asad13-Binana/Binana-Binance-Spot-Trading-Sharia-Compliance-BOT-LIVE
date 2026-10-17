@@ -21,7 +21,7 @@
       "size": 1499
     },
     ".github/workflows/ci.yml": {
-      "sha256": "a44da2b1159fe0f75ac7ff1f4eb12f4e2903e7e497c30b69aa843b465b0f1edf",
+      "sha256": "143bda3f82d3c37f6d050fd3c43b4a491e1296296862b94bce71b878b7d95f5b",
       "size": 25580
     },
     ".gitignore": {
@@ -53,7 +53,7 @@
       "size": 2171
     },
     "Dockerfile.freqtrade": {
-      "sha256": "b94537d1d5cc1b4c2924f0af844e8dee5f91d819fba19bd2a4e149c6b6f2f4e0",
+      "sha256": "6e876ba68e53b97075ad6aab244a6969818a6d51d80893232ba726b0db717215",
       "size": 771
     },
     "Dockerfile.services": {
@@ -201,8 +201,8 @@
       "size": 10542
     },
     "deploy/oracle_setup.sh": {
-      "sha256": "d85bcede444d912865e0d23c4b65c4ceaa82124f75ca23c0f6e90e7b8b68ba49",
-      "size": 15490
+      "sha256": "7809d4f71aa0e98ec8b00b72294b0ff307315113413ecd94d581cf2bed2efa2c",
+      "size": 15684
     },
     "deploy/oracle_validate.sh": {
       "sha256": "ecf4ed952b087f5d96fabab8019dcc5aae7cdd2a58e19783f9ff3bd77227b279",
@@ -276,6 +276,10 @@
       "sha256": "2b71cee27e376acde8a6c191a5aee78de1d04587ea5ac9f2b140afd2a3d45015",
       "size": 2915
     },
+    "docs/FREQTRADE_2026_9_SOURCE_UPDATE_2026-10-16.md": {
+      "sha256": "62d1635eb75e948b66a51567b2333c1199cbb515ac22948f0a0cdaddd193b9b3",
+      "size": 3201
+    },
     "docs/GITHUB_ORACLE_DEPLOYMENT.md": {
       "sha256": "54d8a177246f69b9c5727e26e5155e5607638f7434ca5b79c260ddb57b7d2c7e",
       "size": 6083
@@ -285,8 +289,8 @@
       "size": 2785
     },
     "docs/IMAGE_DIGEST_PINNING.md": {
-      "sha256": "3bb71f0363e1e13fb4b36f00aa4b372526984cfe438e6d66078a2a381f0cf7ef",
-      "size": 1905
+      "sha256": "739e555691d05f8c0afb7792a86bb34e5f86a7a829d096d1d0da88fe0dc9e331",
+      "size": 1947
     },
     "docs/LIVE_PROMOTION_CHECKLIST.md": {
       "sha256": "de2f34c3783d3453923bd2d403bbab997a2d7869df477a34e080b2d3492688eb",
@@ -365,16 +369,16 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "e4295edf0cf3ef8c72d1d18a28cc1e17f95c999b9e805c40a5b9ba19655d0fdf",
-      "size": 55322
+      "sha256": "40a05fcff253117696ca8595495a7a4e600073fc0d1640bb5f4de481d2f05354",
+      "size": 55817
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "7b3b9bb05c899352fca2a3ba4ad2c7dee1b9b3104af8bc5b4453e7ddd286c48a",
-      "size": 330187
+      "sha256": "78f431bf09d5f7fea1bf70e4bca0c21821184ae03a1f0560178dc425653b5165",
+      "size": 331685
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -465,7 +469,7 @@
       "size": 214
     },
     "freqtrade/docker-compose.yml": {
-      "sha256": "3daf9d17a9942a75e73ad3cbceb13e406f4249484ad3967d5d3d1e1cb596d832",
+      "sha256": "7ae192c36cd354dd9a6b18ffa73aaaaf127cf53b0b3158de4b85f0cffafbba4e",
       "size": 728
     },
     "freqtrade/scripts/backtest.sh": {
@@ -625,11 +629,11 @@
       "size": 157
     },
     "monitoring/requirements-monitoring.lock": {
-      "sha256": "b4ec1e1da7566fa5e3f084d40dd1b70c67d03cc50da3f95a5177b64d6e209207",
+      "sha256": "deb387ad7ed828e99fa71c3af392978801b3e6252ab2e198c1786bcc394c6fa8",
       "size": 52218
     },
     "monitoring/requirements-monitoring.txt": {
-      "sha256": "cf489db1c0720ddb5391809c8187ddef46b2307015d07a6c4bac76dcae42fcfb",
+      "sha256": "91802ba0cf049964eefeaa56387631981284a6bca122a17e17614744ac548637",
       "size": 168
     },
     "monitoring/snapshot.py": {
@@ -712,6 +716,10 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "size": 0
     },
+    "monitoring/tests/test_mcp_dependency_compatibility.py": {
+      "sha256": "571131c15570bdc0a2557fd2418a0142b066a515eaaeb201aadb5335d7ce14a6",
+      "size": 1433
+    },
     "monitoring/tests/test_monitoring.py": {
       "sha256": "39d76e467242f5b278aa489973fdadf4a197a2f0b8ea7680d531c5872a94ae55",
       "size": 28251
@@ -761,7 +769,7 @@
       "size": 1356
     },
     "scripts/resolve_image_digests.sh": {
-      "sha256": "ba9fa2a8cd11934d0f23951f81d70793bad1411c813866285103e1b70f573f39",
+      "sha256": "d7c787671a5bdc0b0d2af56fd5662070eea205758add8066d2219dc7d7d6bd28",
       "size": 1198
     },
     "scripts/run_legacy_selftests.sh": {
@@ -1241,11 +1249,11 @@
       "size": 22162
     },
     "tests/test_ci_evidence_status.py": {
-      "sha256": "d55bbbd1646c2598980321e026be8f70bf2fd75b0a9cdacdeb318c0456715974",
+      "sha256": "82fe2fcbb6f9286088ba10911e9c0de9b808132abbf8747d5f5edaf7d270e7f6",
       "size": 2780
     },
     "tests/test_clean_host_deployment.py": {
-      "sha256": "722459fd32fe15a3a9a04f2e0250308280188d5d4aa394d17edc1ea410eed186",
+      "sha256": "d33c6f223ee04e5ef154a7d78b2d42fef6a322c1e90db23fe21d5215a3adbeb2",
       "size": 6685
     },
     "tests/test_codex_revision_j_hardening.py": {
@@ -1295,6 +1303,10 @@
     "tests/test_oracle_host_loss_resilience.py": {
       "sha256": "22fc8be0f3b9beb3266d66240669ca0099858f2ab6f5d79a66dd4a6b965ed0b8",
       "size": 4878
+    },
+    "tests/test_oracle_swap_capacity.py": {
+      "sha256": "e53907fade574941550463456785999afa1a4cd3e5ce80f6665e491aa2dfec11",
+      "size": 3610
     },
     "tests/test_package_mode.py": {
       "sha256": "3289f0cc3c7c62a6b118c7046e23357e149b36ede959d10667c9ca119cc3d7e5",
@@ -1357,11 +1369,11 @@
       "size": 15955
     },
     "tests/test_strategy_probe.py": {
-      "sha256": "2486ed14f31be5ea87fecb9b1cd3e884135dfc82218e395cb8bfd8012e025d5f",
+      "sha256": "924df2971f2810ef22b31c69fe8a0aa9c3479e234526e1134799a67a1ad64357",
       "size": 4458
     },
     "tests/test_supply_chain_gate.py": {
-      "sha256": "7bf8541530429e6295e48cf8e32b28b202803cadc53556ef4812c8cdb5242776",
+      "sha256": "7c705f6f9b61da649e5c6465276c640bfe49193ed1aeac07a35218d2d6d4e179",
       "size": 4169
     },
     "tests/test_universe_selection_hardening.py": {
@@ -1401,7 +1413,7 @@
       "size": 21319
     },
     "tests/test_workflow_graph.py": {
-      "sha256": "bb970e04d3c93deea1e34f3955697a0bbfc19dd386df209e54abd2c468105ae5",
+      "sha256": "faabce6d5e9953b57228a2d2bea47f02551d88356cc11ba5fe95b5b71ebe306a",
       "size": 7738
     }
   },
