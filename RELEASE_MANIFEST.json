@@ -21,8 +21,8 @@
       "size": 1499
     },
     ".github/workflows/ci.yml": {
-      "sha256": "143bda3f82d3c37f6d050fd3c43b4a491e1296296862b94bce71b878b7d95f5b",
-      "size": 25580
+      "sha256": "aaebb354aa6baea59e41874d3afe58c0260a02e378f45b38e533545c96da0d39",
+      "size": 25937
     },
     ".gitignore": {
       "sha256": "4f9fd03b96ad4cad58801e464808e7969aa331801b1cb30ee06f44fde36db136",
@@ -173,8 +173,8 @@
       "size": 29757
     },
     "deploy/install_monitoring.sh": {
-      "sha256": "9d6b05b6f3d5aca9f1021dd22d44deeed3d7ccb46fba10747daa20be1771c851",
-      "size": 7642
+      "sha256": "475eee63b84a28d3e8d786deaf41fdc54fa75a78e107c66541e25a643934d448",
+      "size": 9067
     },
     "deploy/instance_identity.sh": {
       "sha256": "e65c1b068bed158e20796c77ea13053bbccb165d28512fe2e7b3d8f7d834bfe0",
@@ -369,16 +369,16 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "23a7b10755bf356f9fe17c99f537815ca5258a8aff05097db491a8e0f7973851",
-      "size": 57291
+      "sha256": "4d0826077a012854c61edb4d36d94cace2042998afd3f98a6194f51171667901",
+      "size": 57442
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
       "sha256": "47deee6835be69cd54c96c3505e31b6e25265772e16cb520e4128fb4a446aa93",
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "0b28f525df904559aa285525cf88ba87950fa692a8c559e7a6b36b2b64824b17",
-      "size": 344995
+      "sha256": "8ff4efa684e3dc9b9ea8eac29bc8fa153a0aca9dc0fd5c0006785540add78160",
+      "size": 346664
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -569,8 +569,8 @@
       "size": 799
     },
     "monitoring/OWNER_ARCHITECTURE.md": {
-      "sha256": "13b19ea0513b675d4effc9d09f9a18bebba93b804b269fec4a8339e45466a113",
-      "size": 2643
+      "sha256": "09a90d2df3e09d799e3d28994f8c0415500a8bb328c24e33988548b6fa898918",
+      "size": 2724
     },
     "monitoring/PACKAGE_NOTES.txt": {
       "sha256": "48059a23ba58a2f5de52e7ce54aedfa0e32473f3c87fff4f140413baf6309531",
@@ -745,8 +745,8 @@
       "size": 8330
     },
     "monitoring/tests/test_owner_snapshot_publication.py": {
-      "sha256": "10db06876c688e81033d86430bf2c9b84287abd6574c758471bd99b1265370f8",
-      "size": 7002
+      "sha256": "876c9126120b01ed385947dfe0dade50c0c5287cf868977c9bf4d3ad5c2f6756",
+      "size": 7725
     },
     "requirements-dev.txt": {
       "sha256": "4ed98842d9a4ed572e9bda6db033a38b9307add5daea7af83fd6e0e6d8446f17",
@@ -1331,6 +1331,10 @@
     "tests/test_oracle_swap_capacity.py": {
       "sha256": "e53907fade574941550463456785999afa1a4cd3e5ce80f6665e491aa2dfec11",
       "size": 3610
+    },
+    "tests/test_owner_monitor_installer.py": {
+      "sha256": "aa6337916716b409245a05dbabe8eb7a88104eb13e693fcd77077b937b0a3f8f",
+      "size": 9397
     },
     "tests/test_package_mode.py": {
       "sha256": "3289f0cc3c7c62a6b118c7046e23357e149b36ede959d10667c9ca119cc3d7e5",
