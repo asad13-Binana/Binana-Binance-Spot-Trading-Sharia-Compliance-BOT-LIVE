@@ -210,7 +210,7 @@ class ManualRegistryProjector:
             'degraded_reason': str(error)[:500] if error else '',
             'automatic_research_enabled': False,
             'ts': time.time(),
-        })
+        }, group_readable=True)
 
     def sync(self, *, force: bool = False) -> bool:
         try:
