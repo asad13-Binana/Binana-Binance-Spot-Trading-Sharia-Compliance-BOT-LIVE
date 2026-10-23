@@ -369,7 +369,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "0e241e6d6a31220eb1b7470e82618877b70093ded9d80b3060b0d00866c84c47",
+      "sha256": "d5541da102cdadb817ccca71032abead9f59567183fd83df5425d664ee191a78",
       "size": 57590
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -761,7 +761,7 @@
       "size": 103803
     },
     "requirements.services.txt": {
-      "sha256": "bfe636cea6a4fb28567178a733608a0a4a8b849fcd36896b1379b30d4d36a0aa",
+      "sha256": "e29dffa7a59888b35d740e74880a45838ac80a1ffee24ac2b384e4ca2ee335df",
       "size": 614
     },
     "scripts/api_readiness.py": {
