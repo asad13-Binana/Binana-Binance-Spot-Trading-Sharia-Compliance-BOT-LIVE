@@ -1,0 +1,35 @@
+{
+  "containers": {
+    "execution-sidecar": {
+      "monitor_only.py": {
+        "bytes": 2708,
+        "repository_source": "runtime_owner/deployed_services/overrides/execution-sidecar/monitor_only.py",
+        "sha256": "7eb8cf2f993e128380bbae4b00eca4983b7d6fd8287c4f102cdcee62538c5cee"
+      }
+    },
+    "universe": {
+      "services/universe_service/ranker.py": {
+        "bytes": 1916,
+        "repository_source": "runtime_owner/deployed_services/overrides/universe/services/universe_service/ranker.py",
+        "sha256": "95fed741d90b4c8d03d67d9edfe8a3dbd5f2a592cc1e345688b76294c9403ed8"
+      },
+      "services/universe_service/scanner.py": {
+        "bytes": 19453,
+        "repository_source": "runtime_owner/deployed_services/overrides/universe/services/universe_service/scanner.py",
+        "sha256": "6989ca84ccec7d72732831d5b3d74cbd06d82bf7bbeeb3bd6916bfe8475128a5"
+      },
+      "services/universe_service/sharia_filter.py": {
+        "bytes": 13006,
+        "repository_source": "runtime_owner/deployed_services/overrides/universe/services/universe_service/sharia_filter.py",
+        "sha256": "242e9ae28aa23d89435280cfef3f094020d14cb16f6bad4800c52d488eb28dd8"
+      },
+      "services/universe_service/sharia_gate.py": {
+        "bytes": 12173,
+        "repository_source": "runtime_owner/deployed_services/overrides/universe/services/universe_service/sharia_gate.py",
+        "sha256": "c79eb3eff5a8274ab29d446d3f47f1366f9f0f8acdc1ae78cae9af2d6d80c475"
+      }
+    }
+  },
+  "kind": "Oracle support build source closure; archival source inputs only",
+  "original_index_sha256": "d9a2541a6c1e3cd7c5e5319e128c196b3a7a0e9bc2619e79bc2c25d224dbbdd6"
+}

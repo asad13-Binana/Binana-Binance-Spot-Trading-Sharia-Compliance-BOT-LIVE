@@ -1,0 +1,10 @@
+{
+  "schema": "binana-release-host-v1",
+  "project": "binana-oracle-live",
+  "service": "freqtrade",
+  "config": "/etc/binana-oracle-live/config/config.json",
+  "shared": "/var/lib/binana-oracle-live/shared",
+  "release": "/etc/binana-oracle-live/release",
+  "issuer": "/etc/binana-oracle-live/authority/issuer.ed25519",
+  "evidence_root": "/var/backups/binana-oracle-live"
+}

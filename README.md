@@ -1,8 +1,18 @@
 # BINANA Binance Spot — LIVE package
 
-Latest maintenance (October 14, 2026): the shared Deployment view reports current authenticated runtime state and fresh sidecar evidence, including safety halts and runtime faults. LIVE PR #29 was merged on October 12; this follow-up retains the existing strategy and LIVE interlocks. No real-money runtime has been deployed or certified. See [the AWS/repository comparison](docs/recovery/RUNTIME_PARITY_20261014.md).
+For new Oracle preparation, use [the owner bundle](docs/ORACLE_OWNER_BUNDLE.md)
+and [Oracle deployment route](docs/ORACLE_DEPLOYMENT_GUIDE.md). Freqtrade **2026.9**
+with `BinanaNfiSpot` is the sole order owner, retaining five-minute signals,
+four 250-USDT slots and the existing Sharia, freshness and native protection
+gates. `owner-monitor` cannot execute orders.
 
-LIVE keeps its existing execution interlocks and deployment settings. Testnet owner patches are excluded from this package.
+This is a separate LIVE release candidate for local preparation. Its template
+is stopped with LIVE activation disabled; no production runtime is certified.
+Native ARM64, account, certificate, restore, rollback and soak acceptance remain
+separate. The root Compose/installer below is legacy sidecar recovery material,
+excluded from the new owner bundle and unsuitable for its upgrade or rollback.
+Historical [runtime comparison](docs/recovery/RUNTIME_PARITY_20261014.md) does
+not certify this candidate.
 
 See [current status and recent changes](docs/recovery/RECOVERY_STATUS_20261007.md) and [the additive registry record](docs/recovery/REGISTRY_ADDITIONS_20260930.json). Historical deployment and validation notes below do not certify the current candidate.
 
@@ -64,8 +74,8 @@ extracted deterministic artifact.
 
 - Testnet must be deployed first; live requires matching release markers and a
   signed live-evidence envelope.
-- Freqtrade is signal-only; the execution sidecar is the only Binance order
-  owner.
+- The current owner bundle uses Freqtrade for all orders. The retained root
+  Compose package has a different legacy execution architecture.
 - Research decisions require the supplied v19.3 controller and signed owner approval; the operational manual registry is a separate gate.
 - Inter-service messages are HMAC-authenticated and release-bound.
 - BNB and BTC are excluded as bases; no BNB fee dependency.
