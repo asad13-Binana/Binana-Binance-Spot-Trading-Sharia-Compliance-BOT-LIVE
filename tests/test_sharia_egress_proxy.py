@@ -68,10 +68,20 @@ class ComposeIsolationTests(unittest.TestCase):
         self.assertNotIn('depends_on', service)
         environment = service['environment']
         self.assertEqual(environment['SHARIA_REGISTRY_MODE'], 'manual')
-        for name in ('HTTPS_PROXY', 'COINGECKO_API_KEY',
+        # Signed owner commands and their research results require these two
+        # existing bus keys, without granting any network or trading access.
+        bus_keys = {'SHARIA_APPROVAL_HMAC_KEY', 'SHARIA_RESULT_HMAC_KEY'}
+        self.assertEqual(
+            {name for name in environment if 'HMAC' in name}, bus_keys)
+        for name in bus_keys:
+            self.assertEqual(environment[name], '${' + name + ':?set ' + name + '}')
+        for name in ('HTTP_PROXY', 'HTTPS_PROXY', 'ALL_PROXY', 'COINGECKO_API_KEY',
                      'COINMARKETCAP_API_KEY', 'CMC_API_KEY',
-                     'SHARIA_HMAC_KEY', 'SHARIA_APPROVAL_HMAC_KEY'):
+                     'SHARIA_HMAC_KEY'):
             self.assertNotIn(name, environment)
+        for name in environment:
+            self.assertFalse(name.startswith((
+                'BINANCE_', 'TELEGRAM_', 'COINGECKO_', 'COINMARKETCAP_', 'CMC_')))
 
     def test_only_secretless_proxy_bridges_internal_and_default_networks(self):
         proxy = self.compose['services']['sharia-egress-proxy']

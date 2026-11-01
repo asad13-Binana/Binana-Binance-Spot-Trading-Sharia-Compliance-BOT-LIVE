@@ -83,6 +83,7 @@ BOT_PRODUCT = os.getenv('BOT_PRODUCT', 'BINANA').strip().upper()
 BOT_ENVIRONMENT = os.getenv('BOT_ENVIRONMENT', 'TESTNET').strip().upper()
 BOT_INSTANCE_ID = os.getenv('BOT_INSTANCE_ID', 'BINANA-TN-TYO-01').strip().upper()
 BASE = f'https://api.telegram.org/bot{TOKEN}'
+_TELEGRAM_RETRY_AT = 0.0
 CB = CallbackStore(ttl=int(os.getenv('CALLBACK_TTL_SECONDS', '120')))
 FT_BASE = os.getenv('FREQTRADE_API_URL', 'http://freqtrade:8080/api/v1').rstrip('/')
 FT_USER = os.getenv('FREQTRADE_API_USERNAME', 'freqtrade')
@@ -104,6 +105,9 @@ EXTERNAL_SIGNALS_STATUS = Path(os.getenv(
     'EXTERNAL_SIGNALS_STATUS',
     RUNTIME.parent / 'universe/external' / ('external_' + 'signals.json')))
 API_READINESS_STATUS = RUNTIME / 'api_readiness_status.json'
+SHARIA_REGISTRY_COMMAND_INBOX = Path(os.getenv(
+    'SHARIA_REGISTRY_COMMAND_INBOX',
+    RUNTIME.parent / 'sharia_registry_commands/inbox'))
 
 
 def _telegram_message_data(text, chat_id=None, buttons=None) -> dict:
@@ -117,11 +121,51 @@ def _telegram_message_data(text, chat_id=None, buttons=None) -> dict:
     return data
 
 
+def _telegram_retry_delay() -> int:
+    return max(3, math.ceil(_TELEGRAM_RETRY_AT - time.monotonic()))
+
+
+def _telegram_rate_guard() -> None:
+    if time.monotonic() < _TELEGRAM_RETRY_AT:
+        raise RuntimeError('Telegram flood-control cooldown is active')
+
+
+def _telegram_check_payload(payload) -> None:
+    global _TELEGRAM_RETRY_AT
+    if not isinstance(payload, dict) or payload.get('ok') is not False:
+        return
+    if payload.get('error_code') == 429:
+        parameters = payload.get('parameters')
+        delay = parameters.get('retry_after') if isinstance(parameters, dict) else None
+        if isinstance(delay, bool) or not isinstance(delay, int) or delay < 1:
+            delay = 3
+        _TELEGRAM_RETRY_AT = max(
+            _TELEGRAM_RETRY_AT, time.monotonic() + min(delay, 86_400))
+        raise RuntimeError('Telegram flood-control response; API calls deferred')
+    raise RuntimeError('Telegram API rejected the request')
+
+
+def _telegram_post(endpoint: str, **kwargs):
+    _telegram_rate_guard()
+    response = requests.post(BASE + endpoint, **kwargs)
+    try:
+        payload = response.json()
+    except (AttributeError, ValueError):
+        payload = None
+    if response.status_code == 429:
+        payload = {**(payload if isinstance(payload, dict) else {}),
+                   'ok': False, 'error_code': 429}
+    if not (endpoint == '/editMessageText' and response.status_code == 400 and
+            'message is not modified' in response.text.lower()):
+        _telegram_check_payload(payload)
+    return response
+
+
 def send(text, chat_id=None, buttons=None):
     if not TOKEN:
         return
     data = _telegram_message_data(text, chat_id, buttons)
-    response = requests.post(BASE + '/sendMessage', data=data, timeout=15)
+    response = _telegram_post('/sendMessage', data=data, timeout=15)
     response.raise_for_status()
 
 
@@ -140,7 +184,7 @@ def edit_or_send(text, chat_id, message_id=None, buttons=None):
     data = _telegram_message_data(text, chat_id, buttons)
     data['message_id'] = message_id
     try:
-        response = requests.post(BASE + '/editMessageText', data=data, timeout=15)
+        response = _telegram_post('/editMessageText', data=data, timeout=15)
         if (response.status_code == 400 and
                 'message is not modified' in response.text.lower()):
             return
@@ -287,6 +331,75 @@ def deliver_sidecar_notifications(limit: int = 20) -> int:
     _alert_outbox_health(blocked_reason=blocked_reason)
     return processed
 
+
+def _sidecar_read(name: str) -> dict:
+    """Return a bounded status result when a read-only sidecar query fails.
+
+    Telegram monitoring must remain useful while the execution sidecar is
+    starting, its command bus is temporarily unavailable, or the deployment is
+    still fail-closed.  Only the explicitly read-only commands below may use
+    this fallback; entry, protection and reconciliation mutations continue to
+    surface their real outcome and are never converted into apparent success.
+    """
+    if name not in {'status', 'orders', 'balance', 'profit'}:
+        raise ValueError('unsupported read-only sidecar command')
+    try:
+        return sidecar_command(name, wait=True)
+    except Exception as exc:
+        safe = _redact_secrets(exc, 240)
+        audit('telegram_sidecar_read_unavailable', severity='WARNING', details={
+            'command': name,
+            'error_type': type(exc).__name__,
+            'error': safe,
+        })
+        return {
+            'ok': False,
+            'status': 'temporarily_unavailable',
+            'command': name,
+            'error_type': type(exc).__name__,
+            'error': safe,
+            'no_trading_action_performed': True,
+        }
+
+
+def registry_owner_command(action: str, args: dict) -> dict:
+    """Queue one authenticated owner mutation of the trading halal registry."""
+    normalized = str(action).upper().strip()
+    if normalized not in {'REGISTRY_ADD', 'REGISTRY_REMOVE'}:
+        raise ValueError('invalid manual-registry owner action')
+    base, reason = normalize_pair_input(str(args.get('base', '')))
+    if not base:
+        raise ValueError('invalid registry pair: ' + reason)
+    gate = load_sharia_gate(SHARIA_FILE)
+    registry_sha = str(getattr(gate, 'registry_sha256', '')).lower()
+    if not re.fullmatch(r'[0-9a-f]{64}', registry_sha):
+        raise ValueError('current manual registry hash is unavailable')
+    command_id = uuid.uuid4().hex
+    payload = {
+        'command_id': command_id,
+        'action': normalized,
+        'base': base,
+        'pair': f'{base}/USDT',
+        'expected_registry_sha256': registry_sha,
+        'decided_at': datetime.now(timezone.utc).isoformat(),
+    }
+    if normalized == 'REGISTRY_ADD':
+        request_id = str(args.get('research_request_id', ''))
+        report_sha = str(args.get('report_sha256', '')).lower()
+        if not request_id or not re.fullmatch(r'[0-9a-f]{64}', report_sha):
+            raise ValueError('verified research result binding is required to add')
+        payload['research_request_id'] = request_id
+        payload['report_sha256'] = report_sha
+    signed = envelope.sign_envelope(
+        producer='telegram-broker', purpose=envelope.BUS_SHARIA_DECISION,
+        payload=payload, ttl_seconds=600)
+    SHARIA_REGISTRY_COMMAND_INBOX.mkdir(parents=True, exist_ok=True)
+    atomic_write_json(
+        SHARIA_REGISTRY_COMMAND_INBOX / f'registry_{command_id}.json', signed)
+    audit('telegram_manual_registry_command', actor='telegram-owner', details={
+        'command_id': command_id, 'action': normalized, 'base': base,
+        'expected_registry_sha256': registry_sha})
+    return {'command_id': command_id, 'action': normalized, 'base': base}
 
 def sidecar_command(name, args=None, wait=False):
     """Enqueue one HMAC-signed owner command for the execution sidecar.
@@ -1800,7 +1913,7 @@ def handle_callback(callback):
     data = str(callback.get('data', ''))
     callback_id = callback.get('id')
     try:
-        requests.post(BASE + '/answerCallbackQuery', data={'callback_query_id': callback_id}, timeout=10)
+        _telegram_post('/answerCallbackQuery', data={'callback_query_id': callback_id}, timeout=10)
     except Exception as exc:
         # Callback acknowledgement is best-effort; never stop control supervision.
         log.debug('answerCallbackQuery failed: %s', _redact_secrets(exc))
@@ -1838,8 +1951,39 @@ def _load_offset() -> int:
         ) from exc
 
 
-def _store_offset(offset: int):
-    atomic_write_json(OFFSET_PATH, {'offset': int(offset), 'ts': time.time()})
+def _store_offset(offset: int, *, pending_update_id: int | None = None):
+    payload = {'offset': int(offset), 'ts': time.time()}
+    if pending_update_id is not None:
+        payload['pending_update_id'] = pending_update_id
+    atomic_write_json(OFFSET_PATH, payload)
+
+
+def _recover_interrupted_update() -> None:
+    """Make an interrupted claim observable without replaying its side effects."""
+    if not OFFSET_PATH.exists():
+        return
+    offset = _load_offset()
+    state = json.loads(OFFSET_PATH.read_text(encoding='utf-8'))
+    pending = state.get('pending_update_id')
+    if pending is None:
+        return
+    if (isinstance(pending, bool) or not isinstance(pending, int) or
+            pending < 0 or pending + 1 != offset):
+        raise RuntimeError('Telegram pending update state is corrupt')
+    notice_id = hashlib.sha256(
+        f'{BOT_INSTANCE_ID}:interrupted-update:{pending}'.encode()).hexdigest()[:32]
+    atomic_write_json(TELEGRAM_ALERT_OUTBOX / f'{notice_id}.json', {
+        'schema': 1, 'notification_id': notice_id, 'created_at': time.time(),
+        'text': (
+            f'Telegram request {pending} was interrupted; its outcome is unknown. '
+            'It will not be replayed automatically. Check /shariastatus and '
+            '/status before retrying.'),
+        'buttons': None, 'chat_id': None,
+    })
+    # Clear only after the notice is durable; failed publication is retryable.
+    _store_offset(offset)
+    audit('telegram_update_interrupted', severity='ERROR', details={
+        'update_id': pending, 'notification_id': notice_id})
 
 
 def _claim_update(update_id: object, offset: int) -> tuple[int, bool]:
@@ -1861,7 +2005,7 @@ def _claim_update(update_id: object, offset: int) -> tuple[int, bool]:
         })
         return committed, False
     next_offset = update_id + 1
-    _store_offset(next_offset)
+    _store_offset(next_offset, pending_update_id=update_id)
     return next_offset, True
 
 
@@ -1876,14 +2020,18 @@ def main():
     except envelope.EnvelopeError as exc:
         raise SystemExit(f'BUS KEYS MISSING: {exc}') from exc
     offset = _load_offset()
+    _recover_interrupted_update()
     while True:
         try:
+            _recover_interrupted_update()
             deliver_sidecar_notifications()
+            _telegram_rate_guard()
             response = requests.get(
                 BASE + '/getUpdates',
                 params={'offset': offset, 'timeout': 25, 'allowed_updates': json.dumps(['message', 'callback_query'])},
                 timeout=35,
             ).json()
+            _telegram_check_payload(response)
             if not response.get('ok', False):
                 raise RuntimeError('Telegram getUpdates returned an error: ' + str(response)[:500])
             atomic_write_json(RUNTIME / 'telegram_health.json', {
@@ -1898,6 +2046,7 @@ def main():
                     continue
                 if 'message' in update: handle_message(update['message'])
                 if 'callback_query' in update: handle_callback(update['callback_query'])
+                _store_offset(offset)
             deliver_sidecar_notifications()
         except Exception as exc:
             # H-004: requests embeds the full attempted URL in its exception
@@ -1911,7 +2060,7 @@ def main():
                 'error_type': type(exc).__name__,
             }, group_readable=True)
             log.warning('poll failed: %s', safe)
-            time.sleep(3)
+            time.sleep(_telegram_retry_delay())
 
 if __name__ == '__main__':
     main()

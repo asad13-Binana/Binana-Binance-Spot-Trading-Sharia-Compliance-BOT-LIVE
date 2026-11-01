@@ -1,0 +1,637 @@
+{
+  "base_image_id": "sha256:a90b7f661500f7d00b3da32ce4c22d987d41d6da01483affe849a0baccddb523",
+  "baseline_commit": "8b01c3c3c5a36d28aeabd2ff403bc9be4bfbe4bf",
+  "derivation": {
+    "acceptance": "Local source tests only; LIVE activation, deployment and authenticated exchange acceptance not performed",
+    "authorized_strategy": "BinanaNfiSpot, 5m, four nominal 250-USDT slots",
+    "package_environment": "live",
+    "source_base_commit": "69b0f1210c47359a50214b7d5f862b75be47be43",
+    "source_candidate_sha256": "75171945ee2215a5860781042989571bdd7c57edad1f600ae53d9fd510b004d9",
+    "source_repository": "asad13-Binana/Binana-Binance-Spot-Trading-Sharia-Compliance-BOT-TestNet",
+    "target_base_commit": "34dc1b869ecac2cc2208992048c4bea56449387f",
+    "target_repository": "asad13-Binana/Binana-Binance-Spot-Trading-Sharia-Compliance-BOT-LIVE"
+  },
+  "files": {
+    "owner/binana-strategies/BinanaNfiSpot.py": {
+      "bytes": 8029,
+      "sha256": "3b66d4a64280b37ecc321cab939f86fd89ee00cdd888fa38ec5ff1e4757974cf"
+    },
+    "owner/binana-strategies/binana_vendor/NostalgiaForInfinityX8.py": {
+      "bytes": 2505700,
+      "sha256": "fcf9f622a3ad797bd143561d1017f3930220f22c793905af929ff1d33bbde686"
+    },
+    "owner/freqtrade/binana/__init__.py": {
+      "bytes": 79,
+      "sha256": "b27d08f7c6b48cbff2ef9bb99a89adef207d2c1c426d0eb59fd7d92790c52295"
+    },
+    "owner/freqtrade/binana/allocation.py": {
+      "bytes": 2228,
+      "sha256": "51400315c30a61d6f0cc887dae3735e45730fb0e3cf322bbf4dbba6f4d4a4789"
+    },
+    "owner/freqtrade/binana/binance_order_lists.py": {
+      "bytes": 23868,
+      "sha256": "f4442d50c969dcd27258f808b61976076cf92525a421e5196174b3e8f06c2931"
+    },
+    "owner/freqtrade/binana/cache.py": {
+      "bytes": 15370,
+      "sha256": "8a6b889e1fc1eaf3ae30f299aef46da80cee1c07cf17f48771ed07cb15fd94f6"
+    },
+    "owner/freqtrade/binana/cache_runtime.py": {
+      "bytes": 2304,
+      "sha256": "6e08f4580a4a43140300e33b01aab89009b629703f633d4e1d6ac7cc5cdbba43"
+    },
+    "owner/freqtrade/binana/canonical_fees.py": {
+      "bytes": 9109,
+      "sha256": "61bc4651e94b776fbbe92d5306e77007e2683ff3d1972a74645fd0fc2def0f84"
+    },
+    "owner/freqtrade/binana/canonical_receipts.py": {
+      "bytes": 3480,
+      "sha256": "2021f65f1c17581df556044b88a3e9fdaccd88e173dc18a1a631bfb9d1a609ea"
+    },
+    "owner/freqtrade/binana/closed_recovery.py": {
+      "bytes": 9016,
+      "sha256": "95b422cf6b23cdaa2de4906ce24426aae614a43e648886beb998d114c1b8e5f9"
+    },
+    "owner/freqtrade/binana/confluence.py": {
+      "bytes": 4077,
+      "sha256": "2a782a3cf988efbfc1e6f3010760d132eb9ef1594458586917823a828b3a2d1c"
+    },
+    "owner/freqtrade/binana/durable_journal.py": {
+      "bytes": 5583,
+      "sha256": "f6d53f2601582b6fcfcb73d3da6a9b3070a593eebbed8f1c685d4ab48c62a4e2"
+    },
+    "owner/freqtrade/binana/entry_recovery.py": {
+      "bytes": 9713,
+      "sha256": "4b953ef135d074d8b1acf05e20476a01d93a0b60e37f4a9cdd734d2b2e168212"
+    },
+    "owner/freqtrade/binana/environment.py": {
+      "bytes": 7682,
+      "sha256": "076b477006b279e4565173b4fb5f2a5a155a1aaf192b3b91236378ff72be1a46"
+    },
+    "owner/freqtrade/binana/execution_manager.py": {
+      "bytes": 54837,
+      "sha256": "9a7071ae7152311e1f57b4ede553513aaf8ea470fb713cb965c77646492c1e1f"
+    },
+    "owner/freqtrade/binana/market_data.py": {
+      "bytes": 7962,
+      "sha256": "afaa9d41d302b30e5875a3e1487508ff7a78dfb4b8e9ddff75e3721ef601a760"
+    },
+    "owner/freqtrade/binana/operator_exit.py": {
+      "bytes": 10433,
+      "sha256": "8cbb887950a85ac6f0f29a7d085d292e34d4a2bec8deebd01333ff1d0891fcfb"
+    },
+    "owner/freqtrade/binana/package_profile.py": {
+      "bytes": 278,
+      "sha256": "c9018973500e9c29e4a7cdecd1f7e35453789253d3234c559fbd47b8efc86032"
+    },
+    "owner/freqtrade/binana/persistence_readiness.py": {
+      "bytes": 1345,
+      "sha256": "33c58ca5704322ce26e4eb4bb4208c72f081ff5c41a04abf1326e541e75de199"
+    },
+    "owner/freqtrade/binana/protection_plan.py": {
+      "bytes": 5178,
+      "sha256": "6c942931d6e7c6aae162372d1f520657079519d51c794d4be2d850a5d26ded30"
+    },
+    "owner/freqtrade/binana/quality_gate.py": {
+      "bytes": 476,
+      "sha256": "a045a9d528fd85f1dfa6dcddf0ff17312f52b265134b764bae39d905a549450d"
+    },
+    "owner/freqtrade/binana/recovery_contract.py": {
+      "bytes": 8203,
+      "sha256": "5bdc91310a30cffe1d1ad41a32c76cdccf87f52f56f137ff13f94bfd26b0651b"
+    },
+    "owner/freqtrade/binana/registry.py": {
+      "bytes": 4087,
+      "sha256": "cec2da1736913b1370cc1e7a15679248719e1d81ff973c857ecf55ff7b12933f"
+    },
+    "owner/freqtrade/binana/release_gate.py": {
+      "bytes": 5617,
+      "sha256": "0c1ae8dfe43525ebc6b41268be8dd845e6f2333a8051f077b7ef07acf7f517e9"
+    },
+    "owner/freqtrade/binana/retained_inventory.py": {
+      "bytes": 7708,
+      "sha256": "abbc7edc5690d0e4156d642094fb7b6ae029a94b14fe01a0e5c77a99a39e1342"
+    },
+    "owner/freqtrade/binana/state_store.py": {
+      "bytes": 39296,
+      "sha256": "b590a3b4819652b74a95e5b440945f6d04d53f55906fb2c1a928f9d15233a3c7"
+    },
+    "owner/freqtrade/binana/submission_absence.py": {
+      "bytes": 3207,
+      "sha256": "112b934b374c64eec750563a1892a7907336597bf9c30b7cb6a7ba892cb3a550"
+    },
+    "owner/freqtrade/binana/user_stream.py": {
+      "bytes": 6794,
+      "sha256": "b6a4c15fd457b463f967b8944faa0931223a0b948d34074c19af145c6b52352c"
+    },
+    "owner/freqtrade/binana/verified_recovery.py": {
+      "bytes": 26208,
+      "sha256": "2518bcaa239b1e32f5f4f7682a1d39eaacfede783ede38d6552ed3b5877da19b"
+    },
+    "owner/freqtrade/exchange/__init__.py": {
+      "bytes": 1780,
+      "sha256": "6025655ffd3f667e643f8c37739ab642b2f1f6be36ddaa87c61bc2f3f955efa0"
+    },
+    "owner/freqtrade/exchange/binance.py": {
+      "bytes": 26846,
+      "sha256": "8a8e20fd10ed45a4c3d59b7c8bf7a68e0d6275ea723a55bac5d314a07d87f6ca"
+    },
+    "owner/freqtrade/freqtradebot.py": {
+      "bytes": 137220,
+      "sha256": "8cc1935109e093bda78248374971d45928888c5686b0681b167cbf90989c29a6"
+    },
+    "owner/freqtrade/persistence/trade_model.py": {
+      "bytes": 93990,
+      "sha256": "988956604e6ba18c3a3e26212328b6c1971965631baed9bdeb16e32c234451f9"
+    },
+    "owner/freqtrade/resolvers/exchange_resolver.py": {
+      "bytes": 4363,
+      "sha256": "baa1046bdb4fc82273c6426f5cc1def35444d4679c6eff2e0b1421eebe37ee2a"
+    },
+    "owner/freqtrade/rpc/api_server/deps.py": {
+      "bytes": 2708,
+      "sha256": "36f57593a8d37d70919f61bf531215071bcf007d8de5a4fbd3095243d1a98322"
+    },
+    "owner/freqtrade/rpc/rpc.py": {
+      "bytes": 76672,
+      "sha256": "346a4c8d5f77f1386242b65b1fc3de5c8ddca4d562e8d502f90e39347beb9494"
+    },
+    "runtime-fixes/telegram/durable_outbox.py": {
+      "bytes": 4276,
+      "sha256": "c72fa79cd6d3607a25f4421a0375a3b88b97afdd9604597b09bd80a3dd74fe79"
+    },
+    "runtime-fixes/telegram/runtime_stable_panel.py": {
+      "bytes": 112956,
+      "sha256": "89cc66b7e7b99f900dc5e66a8bc68552fa562e5aa470f7e6db7c6abbb30d10c2"
+    },
+    "tests/fixtures/runtime_stable_panel.py": {
+      "bytes": 101727,
+      "sha256": "e71f5d070deb57b5427d177614e66d8d987c12558c2ebac8c162f51ce8a9308a"
+    },
+    "tests/registry_fixture.py": {
+      "bytes": 307,
+      "sha256": "d9cf8ad5679e75413eeb8b30a2671f40bc800e8fed3ec01f3e882e96b102a60d"
+    },
+    "tests/runtime_fixture.py": {
+      "bytes": 665,
+      "sha256": "8f53f33f9945f137c7f510e82d440d04fb1742109df364ed1cf3e763cce2291c"
+    },
+    "tests/test_admission_reassessment.py": {
+      "bytes": 12045,
+      "sha256": "ae7adcc593d5a7d9bbf1d2b0c1ccc6bafd5715a805454789b90be1aa864c017f"
+    },
+    "tests/test_audit_20261012.py": {
+      "bytes": 10807,
+      "sha256": "69607c379d610beb1602dacbb8da8377562cc43b9c5812978594b6cb8734266b"
+    },
+    "tests/test_cache.py": {
+      "bytes": 6728,
+      "sha256": "93598f6d64fca12e11bbc8c523441f3056b76ebb8aaee4669308179f9b4e05e7"
+    },
+    "tests/test_closed_ack_recovery.py": {
+      "bytes": 11449,
+      "sha256": "a6bbe3c327c97601c5bd9eff76fa7bb6c459367205fcabad1309765a7241b6e6"
+    },
+    "tests/test_commission_reserve.py": {
+      "bytes": 1730,
+      "sha256": "354a5784b2299d6f1c6555f9b700c75a25be501217922019b61aac07543e4c30"
+    },
+    "tests/test_confluence_policy.py": {
+      "bytes": 1150,
+      "sha256": "184c55d28ce565a6cec3342faae0987ebf55a3cf3cf764930c384153125f6f83"
+    },
+    "tests/test_deployment_completion.py": {
+      "bytes": 4529,
+      "sha256": "2a29991625f0f9e84517367ae7281f44d07e8d3b68806fbc0428d93c4e0ea745"
+    },
+    "tests/test_durable_notifications.py": {
+      "bytes": 1538,
+      "sha256": "3a0b3ba7a849ae1bd04647b023ab6bf0877cc2f24a8a8bd9cec31863fa4e6e10"
+    },
+    "tests/test_engine_core.py": {
+      "bytes": 7005,
+      "sha256": "5eaaabf83f18da2b09058a75af2939b82865957960e995fd1b917f2f313aecde"
+    },
+    "tests/test_entry_reconstruction.py": {
+      "bytes": 14504,
+      "sha256": "48d126e7af08fb3be40d374a235e23bbec53ff8db1a602b473e1a068a5836213"
+    },
+    "tests/test_entry_submission_once.py": {
+      "bytes": 8383,
+      "sha256": "a4e9729202347e4c50e327dd6297a85b48ac94cbf554cdd61ef4e2e40e0f4282"
+    },
+    "tests/test_exact_commissions.py": {
+      "bytes": 12256,
+      "sha256": "8692ea67f690795844a36bb3a337451accc0b53f07d65d1854814f85e76df1ae"
+    },
+    "tests/test_execution_venue.py": {
+      "bytes": 1463,
+      "sha256": "bcf91329968bf8a817eb1ee90280090a0c830e014963fedc01183780632720bd"
+    },
+    "tests/test_fill_identity.py": {
+      "bytes": 3137,
+      "sha256": "55ba5eb467013628d65fe49282a232485bd3f75bbf519a3b29b0f456be6cba25"
+    },
+    "tests/test_final_contracts.py": {
+      "bytes": 10620,
+      "sha256": "341c55cc9d6a5d2ceb01784060ffdbfaf30cf2a86246be8b69ed9499751a6206"
+    },
+    "tests/test_freqtrade_20269_upgrade.py": {
+      "bytes": 4854,
+      "sha256": "3d36235955ed161631b08a9d4a21aee0a6ea6307282d8be9e3d80b47755cc5a4"
+    },
+    "tests/test_identity_integrity.py": {
+      "bytes": 4233,
+      "sha256": "3901d4b5a7cd39ddb011b175b5aac0cf627ab42cbefca9079a168cd3e2c82be2"
+    },
+    "tests/test_operator_exit.py": {
+      "bytes": 16681,
+      "sha256": "14fc8fb95d63886911cbdec571e41181b31dcd7bf18fb155fc774261175cc9a5"
+    },
+    "tests/test_owned_signal_replay.py": {
+      "bytes": 2652,
+      "sha256": "4f8927ec56b09831e00970e8cc63488840c4098017efa73f850d5d92cb8d2a19"
+    },
+    "tests/test_owner_monitoring.py": {
+      "bytes": 4692,
+      "sha256": "d432f443acbe39925d4bec0fbd589327789c1536d1cfc8c7db4d53e79290af45"
+    },
+    "tests/test_owner_resume_gate.py": {
+      "bytes": 1419,
+      "sha256": "895cc537bf6d19c5f284591804e430d1cddf88f97cada0428fc5d1da1ca77645"
+    },
+    "tests/test_package_environment.py": {
+      "bytes": 10722,
+      "sha256": "6ff5fbbecec9fc9a03da859f2f0fc26e51a397c59d72210bf5acdba0b6463f33"
+    },
+    "tests/test_pair_exclusions.py": {
+      "bytes": 547,
+      "sha256": "af72d9efd29dc01c73d04ac74f127906c7abaf3870500e1ae651062a1232bbac"
+    },
+    "tests/test_panel_audit_20261012.py": {
+      "bytes": 3674,
+      "sha256": "f9c05e6ec34413e7eaf4ffb332de781b911a2dc156c300765861ead454aeae3c"
+    },
+    "tests/test_partial_exit_reconciliation.py": {
+      "bytes": 2502,
+      "sha256": "3c10dc01fecf5160f45edb821ff08b219193bf2e5a4df1950507978ba2516923"
+    },
+    "tests/test_partial_promotion_recovery.py": {
+      "bytes": 9751,
+      "sha256": "40fc137bbcbb46f9332af1de139cf9342244cfc15e717777eed83039e06dca4a"
+    },
+    "tests/test_private_event_ordering.py": {
+      "bytes": 1992,
+      "sha256": "66011036eae80e9fb5c5225a4c80bcae359e8eed4bb097328e6215d270414c39"
+    },
+    "tests/test_promotion_visibility.py": {
+      "bytes": 6066,
+      "sha256": "81cf2743609a4e611c8c1ca0d0550ca2fb4c6c6f6adf843b3eb05a42e503bc15"
+    },
+    "tests/test_protection_plan_durability.py": {
+      "bytes": 11898,
+      "sha256": "c79f11f0fc6d1a827cbdde88bf2f56dfb88717b2d5d904a5d593defc1eb350c6"
+    },
+    "tests/test_r18_regressions.py": {
+      "bytes": 5406,
+      "sha256": "ac28317bbfc8f383ab44f472014c9982d55e8f3b5e3d34fbba1fc1e1956a7a22"
+    },
+    "tests/test_registry_schema.py": {
+      "bytes": 1532,
+      "sha256": "8f8c6cb46093369ddee592c1f152508623b8de45f009571a4ddc1a18e6487c9f"
+    },
+    "tests/test_release_deployment.py": {
+      "bytes": 4408,
+      "sha256": "c348ee04f964476b98d267b3c13f44f592814074cc3dc25fbee84b54ccd6b167"
+    },
+    "tests/test_release_evidence.py": {
+      "bytes": 1296,
+      "sha256": "3d5036b81905b41be2bdc7cb27008acd85d945474de4aab583c6ead5403c06e5"
+    },
+    "tests/test_release_signature.py": {
+      "bytes": 2844,
+      "sha256": "fd170c08aef8cd64cf20d40f84109595854f2761ff96ebe97ec95ca6b5c03810"
+    },
+    "tests/test_restart_partial_recovery.py": {
+      "bytes": 13790,
+      "sha256": "ae009bc0260c149e33781b59046d6b89545f87bccc7e49d7b0b80c1691ec5071"
+    },
+    "tests/test_retained_accounting.py": {
+      "bytes": 1900,
+      "sha256": "98810f2ecb97a1f2c2010da19eeaae6d89d514f5f7d27c559edf0d100521463e"
+    },
+    "tests/test_retained_inventory_monitor.py": {
+      "bytes": 4927,
+      "sha256": "865c206f1eadde7986c03b42552b40ae4b2a53ba162c611aafcf2281efeac1c6"
+    },
+    "tests/test_retained_slot_evidence.py": {
+      "bytes": 2878,
+      "sha256": "9a72a50c9fabb40438f063a839c63329b66ab9894036cc92b9451f3f253a1a02"
+    },
+    "tests/test_rpc_session_cleanup.py": {
+      "bytes": 2220,
+      "sha256": "f631d858f492a819cad65036dacce11e6339205d909a9ff53f2d957244ae3a1e"
+    },
+    "tests/test_stake_policy.py": {
+      "bytes": 2268,
+      "sha256": "97f200b171466cdad47b36762b824e0753d5293f53f56f8bc5ab5199f22ae6e8"
+    },
+    "tests/test_strategy_contract.py": {
+      "bytes": 5280,
+      "sha256": "425703e98c11f330c20842b3dd68fa3dff9fb20a0366212114ac93bb955a593b"
+    },
+    "tests/test_telegram_release.py": {
+      "bytes": 1145,
+      "sha256": "f18b3744b5056f41cb2592ebe46785b03374792f4952e57ed8410937a0d62c45"
+    },
+    "tests/test_telegram_settlements.py": {
+      "bytes": 2679,
+      "sha256": "25dd5d907a010bbf3731eb659e2e7e5fa6d8aafdd6f26c09b684dcf5c7270c8f"
+    },
+    "tests/test_user_stream_health.py": {
+      "bytes": 761,
+      "sha256": "aea0e6c6a35589fe34a2a6ec4949e6ece0778678a57d553306c3733cb3286ccf"
+    },
+    "tests/test_user_stream_shutdown.py": {
+      "bytes": 1069,
+      "sha256": "c0655d5ae9d09858edae0cfe59bc2f15959928a289f6a2ed81f38fdba0c1deb8"
+    },
+    "tests/test_zero_fill_entry_cleanup.py": {
+      "bytes": 989,
+      "sha256": "c8fb05a73fcaed23f58c5decdd46de36e1c1a29cbc96a93b250724259a85f9e9"
+    }
+  },
+  "kind": "Reviewed current owner source and panel; runtime acceptance is recorded separately per image",
+  "upstream": {
+    "archive_sha256": "a453638c8ad59f8655036eaabd0858cb432331e70caa259976299e5c59108c89",
+    "commit": "1f394eaebc2f46a83d26971388628707802f8602",
+    "version": "2026.9"
+  },
+  "validation": {
+    "authenticated_exchange_acceptance": false,
+    "network": "none",
+    "required_test_ids": [
+      "test_admission_reassessment.AdmissionReassessment.test_accepted_candidate_cannot_be_prepared_a_second_time",
+      "test_admission_reassessment.AdmissionReassessment.test_candle_expiring_during_market_read_cannot_be_reserved",
+      "test_admission_reassessment.AdmissionReassessment.test_candle_expiring_while_waiting_for_reservation_lock_cannot_be_reserved",
+      "test_admission_reassessment.AdmissionReassessment.test_different_candle_frame_cannot_qualify_original_signal",
+      "test_admission_reassessment.AdmissionReassessment.test_expired_candle_cannot_be_readmitted",
+      "test_admission_reassessment.AdmissionReassessment.test_fill_receipt_alone_prevents_flow_readmission",
+      "test_admission_reassessment.AdmissionReassessment.test_flow_recovery_still_requires_original_confluence_thresholds",
+      "test_admission_reassessment.AdmissionReassessment.test_order_identity_alone_prevents_flow_readmission",
+      "test_admission_reassessment.AdmissionReassessment.test_pair_not_ready_retry_rechecks_four_slot_limit",
+      "test_admission_reassessment.AdmissionReassessment.test_pair_not_ready_retry_rechecks_total_allocation",
+      "test_admission_reassessment.AdmissionReassessment.test_reassessment_rejection_cannot_overwrite_concurrent_submission",
+      "test_admission_reassessment.AdmissionReassessment.test_reassessment_survives_restart_without_second_registry_lookup",
+      "test_admission_reassessment.AdmissionReassessment.test_recheck_is_bounded_to_once_per_five_seconds",
+      "test_admission_reassessment.AdmissionReassessment.test_recovered_flow_reassesses_same_unsubmitted_candle_with_original_halal_decision",
+      "test_admission_reassessment.AdmissionReassessment.test_repeated_weak_flow_is_journaled_without_duplicate_admission_event",
+      "test_admission_reassessment.AdmissionReassessment.test_reservation_rechecks_capacity_changed_during_market_read",
+      "test_admission_reassessment.AdmissionReassessment.test_unknown_state_cannot_become_retryable_after_weak_flow",
+      "test_audit_20261012.AccountAndMarketAdmission.test_account_asset_limit_blocks_before_submission",
+      "test_audit_20261012.AccountAndMarketAdmission.test_account_symbol_limit_is_enforced",
+      "test_audit_20261012.AccountAndMarketAdmission.test_crossed_take_profit_or_trigger_blocks",
+      "test_audit_20261012.AccountAndMarketAdmission.test_exchange_capacity_counts_other_symbols",
+      "test_audit_20261012.AccountAndMarketAdmission.test_maker_cross_blocks",
+      "test_audit_20261012.AccountAndMarketAdmission.test_missing_account_filter_evidence_blocks",
+      "test_audit_20261012.AccountAndMarketAdmission.test_read_failure_blocks_and_valid_snapshot_passes",
+      "test_audit_20261012.DurablePolicy.test_status_cannot_overwrite_protection_plan_or_profile",
+      "test_audit_20261012.ExchangeGeometry.test_fixed_geometry_matches_approved_plan",
+      "test_audit_20261012.ExchangeGeometry.test_two_makers_do_not_prove_protection",
+      "test_audit_20261012.FillPagination.test_order_with_more_than_one_thousand_fills_is_complete",
+      "test_audit_20261012.FillPagination.test_stalled_full_page_blocks_reconciliation",
+      "test_audit_20261012.ReferenceContracts.test_active_reference_does_not_require_average",
+      "test_audit_20261012.ReferenceContracts.test_active_reference_rejects_avg_permitted_price",
+      "test_audit_20261012.ReferenceContracts.test_fallback_wrong_average_window_is_blocked",
+      "test_audit_20261012.ReferenceContracts.test_null_reference_with_matching_average_window",
+      "test_audit_20261012.ReferenceContracts.test_reference_timeout_never_falls_back",
+      "test_audit_20261012.ReferenceContracts.test_wrong_symbol_or_invalid_reference_is_not_absence",
+      "test_audit_20261012.StorageAdmission.test_critical_persistence_volume_blocks_even_if_release_snapshot_is_green",
+      "test_audit_20261012.StorageAdmission.test_inode_exhaustion_blocks_even_with_bytes_available",
+      "test_audit_20261012.StorageAdmission.test_write_or_fsync_error_blocks_even_on_large_volume",
+      "test_cache.TestCache.test_category_symlink_not_followed",
+      "test_cache.TestCache.test_changed_file_skipped",
+      "test_cache.TestCache.test_content_hash_detects_preserved_stat",
+      "test_cache.TestCache.test_expired_confirmation",
+      "test_cache.TestCache.test_expired_registered_object_only",
+      "test_cache.TestCache.test_hardlink_skipped",
+      "test_cache.TestCache.test_invalid_clock",
+      "test_cache.TestCache.test_leased_reader_blocks_automatic_cleaner",
+      "test_cache.TestCache.test_new_pin_after_preview",
+      "test_cache.TestCache.test_pinned_unexpired",
+      "test_cache.TestCache.test_preview_is_non_destructive",
+      "test_cache.TestCache.test_protected_sibling_directories",
+      "test_cache.TestCache.test_quota_does_not_evict_unexpired",
+      "test_cache.TestCache.test_rejects_overlapping_roots",
+      "test_cache.TestCache.test_rejects_root_symlink",
+      "test_cache.TestCache.test_rejects_symlink_ancestor",
+      "test_cache.TestCache.test_rejects_unmarked_nonempty_root",
+      "test_cache.TestCache.test_replay_does_not_delete_twice",
+      "test_cache.TestCache.test_size_bound",
+      "test_cache.TestCache.test_status",
+      "test_cache.TestCache.test_symlink_file_skipped",
+      "test_cache.TestCache.test_unrecognized_category",
+      "test_cache.TestCache.test_wrong_owner",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_absent_label_cannot_hide_existing_child_or_network_error",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_changed_commission_stays_blocked",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_closed_ack_revalidates_persisted_replacement_absence",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_exit_filled_with_unacknowledged_incident_is_recovered",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_failure_during_finalization_rolls_back_intent_and_incidents",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_foreign_open_order_is_left_untouched",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_foreign_scope_stays_blocked",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_live_sibling_and_unresolved_list_stay_blocked",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_missing_canonical_trade_creates_blocker",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_missing_execution_stays_blocked",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_missing_oco_list_identity_stays_blocked",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_restart_after_close_acknowledges_once_without_canonical_changes",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_retained_history_is_not_acknowledged_as_fully_sold",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_reused_order_id_with_foreign_client_stays_blocked",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_unavailable_history_is_not_terminal_proof",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_uncommitted_canonical_changes_are_not_used_as_proof",
+      "test_closed_ack_recovery.ClosedAcknowledgmentRecovery.test_unresolved_submission_is_not_acknowledged",
+      "test_commission_reserve.CommissionReserve.test_all_undiscounted_commission_components_are_reserved",
+      "test_commission_reserve.CommissionReserve.test_missing_invalid_or_wrong_symbol_rates_fail_closed",
+      "test_commission_reserve.CommissionReserve.test_zero_testnet_commission_does_not_manufacture_fee_residual",
+      "test_confluence_policy.ConfluencePolicy.test_configured_minimum_votes_are_enforced",
+      "test_deployment_completion.MaximumPosition.test_working_buy_includes_free_locked_and_pending_buys",
+      "test_deployment_completion.NativeWorkingExit.test_triggered_native_stop_is_preserved_and_reconciled",
+      "test_deployment_completion.NativeWorkingExit.test_untriggered_survivor_does_not_authorize_entries",
+      "test_deployment_completion.SignedResumeProjection.test_panel_uses_fresh_authenticated_owner_decision",
+      "test_deployment_completion.SignedResumeProjection.test_unverified_owner_still_blocks",
+      "test_durable_notifications.DurableNotifications.test_chat_budget_is_shared_across_instances_and_restarts",
+      "test_durable_notifications.DurableNotifications.test_transport_failure_survives_restart_and_ack_deduplicates",
+      "test_engine_core.CoreTests.test_fixed_plan_and_promotion_cannot_loosen_boundary",
+      "test_engine_core.CoreTests.test_four_slot_ledger",
+      "test_engine_core.CoreTests.test_otoco_transport_uses_fixed_children_and_unknown_is_not_retry",
+      "test_engine_core.CoreTests.test_registry_is_exactly_once_per_intent",
+      "test_engine_core.CoreTests.test_runtime_contract_rejects_non_spot_and_disabled_live",
+      "test_engine_core.CoreTests.test_state_store_persists_admission_and_generation",
+      "test_entry_reconstruction.EntryReconstruction.test_canonical_commit_before_binding_recovers_exactly_one_trade_and_order",
+      "test_entry_reconstruction.EntryReconstruction.test_foreign_epoch_or_binding_is_rejected_before_canonical_update",
+      "test_entry_reconstruction.EntryReconstruction.test_no_fill_transition_rolls_back_all_changes_on_interrupted_commit",
+      "test_entry_reconstruction.EntryReconstruction.test_pending_fok_response_never_creates_trade_before_expiry_recovery",
+      "test_entry_reconstruction.EntryReconstruction.test_recovered_binding_commits_state_and_incident_resolution_atomically",
+      "test_entry_reconstruction.EntryReconstruction.test_restart_after_unknown_post_recovers_without_resubmission",
+      "test_entry_reconstruction.EntryReconstruction.test_same_owned_open_order_can_advance_from_new_to_filled_on_restart",
+      "test_entry_reconstruction.EntryReconstruction.test_terminal_fok_no_fill_releases_slot_only_without_open_obligations",
+      "test_entry_reconstruction.EntryReconstruction.test_unbound_sweep_reports_failures_until_a_complete_verified_pass",
+      "test_entry_reconstruction.EntryReconstruction.test_unknown_missing_order_or_wrong_client_never_reconstructs",
+      "test_entry_submission_once.EntrySubmissionOnce.test_accepted_timeout_never_authorizes_second_post",
+      "test_entry_submission_once.EntrySubmissionOnce.test_completed_list_cannot_submit_same_unbound_intent_again",
+      "test_entry_submission_once.EntrySubmissionOnce.test_interrupted_submission_claim_leaves_no_partial_generation",
+      "test_entry_submission_once.EntrySubmissionOnce.test_self_trade_prevention_expiry_is_terminal_in_direct_ack",
+      "test_entry_submission_once.EntrySubmissionOnce.test_separate_coordinators_race_for_one_durable_submission",
+      "test_exact_commissions.ExactCommissions.test_base_entry_fee_never_uses_faucet_and_preserves_full_quote_basis",
+      "test_exact_commissions.ExactCommissions.test_base_fee_dust_is_not_quantized_out_of_owned_inventory",
+      "test_exact_commissions.ExactCommissions.test_entry_notification_reports_net_acquisition_and_initial_entry",
+      "test_exact_commissions.ExactCommissions.test_open_partial_exit_updates_accounting_without_closing_exchange_order",
+      "test_exact_commissions.ExactCommissions.test_partial_child_never_enters_native_timeout_or_replace_paths",
+      "test_exact_commissions.ExactCommissions.test_performance_uses_cash_invested_including_quote_entry_commission",
+      "test_exact_commissions.ExactCommissions.test_profit_statistics_use_total_realized_and_remaining_return",
+      "test_exact_commissions.ExactCommissions.test_quote_commissions_sum_actual_fills_instead_of_averaging_rates",
+      "test_exact_commissions.ExactCommissions.test_sell_base_commission_consumes_inventory_without_sale_proceeds",
+      "test_exact_commissions.ExactCommissions.test_two_partial_exits_replay_ten_times_and_restart_without_double_counting",
+      "test_exact_commissions.ExactCommissions.test_unowned_exit_and_changed_fee_replay_are_rejected",
+      "test_exact_commissions.ExactCommissions.test_unverified_exchange_obligation_prevents_committed_close",
+      "test_execution_venue.ExecutionVenue.test_missing_symbol_and_timeout_are_normal_admission_rejections",
+      "test_execution_venue.ExecutionVenue.test_testnet_metadata_is_used_when_history_client_is_production",
+      "test_fill_identity.FillIdentity.test_authenticated_trade_zero_is_valid_and_duplicate_conflict_is_not_hidden",
+      "test_fill_identity.FillIdentity.test_duplicate_fill_is_idempotent_but_conflicting_economics_block",
+      "test_final_contracts.FinalContracts.test_allowed_halal_decision_is_durable_before_later_failure",
+      "test_final_contracts.FinalContracts.test_fill_ledger_is_idempotent",
+      "test_final_contracts.FinalContracts.test_open_incident_blocks_new_exposure",
+      "test_final_contracts.FinalContracts.test_promotion_reconciles_old_child_execution_before_replacement",
+      "test_final_contracts.FinalContracts.test_promotion_reuses_protected_quantity_not_gross_trade_amount",
+      "test_final_contracts.FinalContracts.test_scoped_order_ids_do_not_collide_across_symbols",
+      "test_freqtrade_20269_upgrade.Upstream20269CustomDataAdmission.test_key_deletion_preserves_binana_identity_and_other_trade_data",
+      "test_freqtrade_20269_upgrade.Upstream20269SpotAdmission.test_depth_gate_counts_every_level_in_uneven_spot_order_books",
+      "test_freqtrade_20269_upgrade.Upstream20269SpotAdmission.test_informative_candles_validate_support_before_runtime",
+      "test_freqtrade_20269_upgrade.Upstream20269SpotAdmission.test_partial_cancel_includes_already_owned_position_in_minimum_stake",
+      "test_freqtrade_20269_upgrade.Upstream20269SpotAdmission.test_spot_cycle_never_fetches_positions_for_liquidation_warnings",
+      "test_identity_integrity.IdentityIntegrity.test_bound_exchange_order_cannot_be_replaced_on_replay",
+      "test_identity_integrity.IdentityIntegrity.test_pair_and_role_conflicts_block_entries",
+      "test_identity_integrity.IdentityIntegrity.test_protection_child_binding_survives_restart_and_conflicting_replay",
+      "test_identity_integrity.IdentityIntegrity.test_trade_binding_is_unique_and_immutable",
+      "test_operator_exit.OperatorExitTests.test_cancel_timeout_already_done_recovers_from_reads",
+      "test_operator_exit.OperatorExitTests.test_cancel_timeout_still_active_never_submits",
+      "test_operator_exit.OperatorExitTests.test_crash_after_preparing_before_post_only_queries",
+      "test_operator_exit.OperatorExitTests.test_emergency_path_routes_before_native_cancellation",
+      "test_operator_exit.OperatorExitTests.test_foreign_open_order_is_never_canceled",
+      "test_operator_exit.OperatorExitTests.test_full_exit_cancels_then_sells_actual_net_quantity_once",
+      "test_operator_exit.OperatorExitTests.test_full_tp_fill_during_cancel_needs_no_market_sell",
+      "test_operator_exit.OperatorExitTests.test_insufficient_free_balance_does_not_use_used_or_faucet_ownership",
+      "test_operator_exit.OperatorExitTests.test_invalid_market_filter_does_not_cancel_protection",
+      "test_operator_exit.OperatorExitTests.test_invalid_options_rejected_before_any_mutation",
+      "test_operator_exit.OperatorExitTests.test_partial_market_base_fee_restores_only_remaining_owned_quantity",
+      "test_operator_exit.OperatorExitTests.test_partial_market_quote_fee_restores_residual_protection",
+      "test_operator_exit.OperatorExitTests.test_partial_stop_fill_is_imported_before_sizing_market_exit",
+      "test_operator_exit.OperatorExitTests.test_repeated_requests_reuse_one_durable_generation",
+      "test_operator_exit.OperatorExitTests.test_rpc_all_validates_options_and_reports_mixed_results",
+      "test_operator_exit.OperatorExitTests.test_terminal_market_dust_is_retained_without_another_sell",
+      "test_operator_exit.OperatorExitTests.test_unknown_post_absent_never_reposts",
+      "test_operator_exit.OperatorExitTests.test_unknown_post_accepted_is_recovered_without_second_post",
+      "test_owned_signal_replay.OwnedSignalReplay.test_bound_trade_is_never_readmitted",
+      "test_owned_signal_replay.OwnedSignalReplay.test_unbound_order_generation_requires_reconciliation",
+      "test_owner_monitoring.OwnerMonitoring.test_import_incident_closes_only_after_verified_recovery",
+      "test_owner_monitoring.OwnerMonitoring.test_shutdown_failure_does_not_skip_resource_cleanup",
+      "test_owner_monitoring.OwnerMonitoring.test_stopped_mode_keeps_owner_monitoring_and_evidence_live",
+      "test_owner_monitoring.OwnerMonitoring.test_unbound_failure_prevents_canonical_readiness_without_open_trades",
+      "test_owner_monitoring.OwnerMonitoring.test_unmapped_canonical_trade_creates_durable_blocker",
+      "test_owner_resume_gate.OwnerResumeGate.test_rpc_start_cannot_bypass_owner_admission_gate",
+      "test_package_environment.PackageEnvironment.test_async_ccxt_request_keeps_awaitable_contract_and_endpoint_fence",
+      "test_package_environment.PackageEnvironment.test_certificate_binds_environment_account_and_epoch",
+      "test_package_environment.PackageEnvironment.test_derivative_and_wallet_routes_are_rejected_before_http_transport",
+      "test_package_environment.PackageEnvironment.test_disabled_live_or_testnet_live_override_is_rejected",
+      "test_package_environment.PackageEnvironment.test_endpoint_tampering_rejects_post_before_http_transport",
+      "test_package_environment.PackageEnvironment.test_foreign_environment_rejected_before_ccxt_construction",
+      "test_package_environment.PackageEnvironment.test_live_placeholder_identity_cannot_construct_owner",
+      "test_package_environment.PackageEnvironment.test_matching_package_accepts_explicit_selected_policy",
+      "test_package_environment.PackageEnvironment.test_private_and_execution_public_clients_use_selected_venue",
+      "test_package_environment.PackageEnvironment.test_private_stream_never_accepts_other_network_health",
+      "test_package_environment.PackageEnvironment.test_wrong_release_scope_blocks_real_freqtrade_entry_before_submission",
+      "test_pair_exclusions.PairExclusions.test_excluded_assets_are_blocked_at_order_owner",
+      "test_panel_audit_20261012.PanelAudit.test_closed_zero_remains_zero",
+      "test_panel_audit_20261012.PanelAudit.test_current_trade_never_borrows_previous_trade_protection",
+      "test_panel_audit_20261012.PanelAudit.test_health_never_ready_with_unhealthy_displayed_dependencies",
+      "test_panel_audit_20261012.PanelAudit.test_profit_unavailable_never_becomes_zero",
+      "test_panel_audit_20261012.PanelAudit.test_retained_missing_settlement_timestamp_is_not_metadata_date",
+      "test_panel_audit_20261012.PanelAudit.test_unavailable_positions_are_unknown_in_both_views",
+      "test_partial_exit_reconciliation.PartialExitReconciliation.test_canceled_partially_filled_exit_is_returned_to_freqtrade",
+      "test_partial_promotion_recovery.PartialPromotionRecovery.test_partial_old_tp_fill_is_recorded_and_only_residual_is_reprotected",
+      "test_private_event_ordering.PrivateEventOrdering.test_duplicate_and_out_of_order_events_are_recorded_once_without_economic_writes",
+      "test_private_event_ordering.PrivateEventOrdering.test_wrong_subscription_or_missing_execution_identity_is_rejected",
+      "test_promotion_visibility.PromotionVisibility.test_delayed_cancel_visibility_rechecks_both_children_before_one_replacement",
+      "test_promotion_visibility.PromotionVisibility.test_identity_mismatch_never_retries_or_submits",
+      "test_promotion_visibility.PromotionVisibility.test_persistently_live_child_exhausts_bound_without_replacement",
+      "test_promotion_visibility.PromotionVisibility.test_reconciliation_verifies_new_protection_in_same_cycle",
+      "test_protection_plan_durability.Durability.test_status_evidence_preserves_plan",
+      "test_protection_plan_durability.Durability.test_status_only_upsert_retains_plan_after_reopen",
+      "test_protection_plan_durability.FreshnessAndCertificate.test_context_expiry_future_and_warmup_fail_closed",
+      "test_protection_plan_durability.FreshnessAndCertificate.test_expiry_boundary_and_seven_day_limit",
+      "test_protection_plan_durability.PendingRecovery.test_replacement_pending_can_prove_absence_before_recovery",
+      "test_protection_plan_durability.PendingRecovery.test_timeout_or_existing_child_does_not_authorize_replacement",
+      "test_protection_plan_durability.Promotion.test_cancel_unknown_does_not_submit_replacement",
+      "test_protection_plan_durability.Promotion.test_invalid_preflight_does_not_cancel_existing_protection",
+      "test_protection_plan_durability.Promotion.test_partial_plan_is_durable_before_post",
+      "test_protection_plan_durability.Promotion.test_plan_survives_successful_submit_and_restart",
+      "test_r18_regressions.R18Regressions.test_allocation_is_enforced_for_manual_trade_size_override",
+      "test_r18_regressions.R18Regressions.test_bind_trade_clears_ephemeral_prepared_state",
+      "test_r18_regressions.R18Regressions.test_order_notional_cannot_exceed_admitted_nominal",
+      "test_r18_regressions.R18Regressions.test_pre_submit_abort_releases_reservation",
+      "test_r18_regressions.R18Regressions.test_slippage_budget_tracks_requested_notional",
+      "test_r18_regressions.R18Regressions.test_terminal_signal_cannot_be_reopened",
+      "test_registry_schema.RegistrySchema.test_ambiguous_boolean_object_legacy_and_expired_records_fail_closed",
+      "test_registry_schema.RegistrySchema.test_empty_registry_is_valid_deny_all",
+      "test_registry_schema.RegistrySchema.test_exact_owner_schema_includes_eth_without_ticker_rewriting",
+      "test_release_deployment.CompletePolicyBinding.test_exchange_and_admission_configuration_changes_invalidate_binding",
+      "test_release_deployment.CompletePolicyBinding.test_missing_immutable_deployment_record_cannot_match_certificate",
+      "test_release_deployment.ReleaseReceiptValidation.test_every_required_acceptance_phase_and_image_is_checked",
+      "test_release_deployment.ReleaseReceiptValidation.test_missing_or_stale_reconciliation_cannot_be_signed",
+      "test_release_evidence.ReleaseEvidence.test_expired_unverified_or_changed_release_never_authorizes_resume",
+      "test_release_signature.ReleaseSignature.test_duplicate_json_members_are_rejected",
+      "test_release_signature.ReleaseSignature.test_other_issuer_and_missing_anchor_are_rejected",
+      "test_release_signature.ReleaseSignature.test_payload_tampering_is_rejected",
+      "test_release_signature.ReleaseSignature.test_unsigned_flags_are_rejected",
+      "test_release_signature.ReleaseSignature.test_unsupported_schema_or_malformed_signature_is_rejected",
+      "test_release_signature.ReleaseSignature.test_valid_signature_returns_payload_for_policy_validation",
+      "test_restart_partial_recovery.RestartPartialRecovery.test_fee_reserve_does_not_block_residual_reprotection",
+      "test_restart_partial_recovery.RestartPartialRecovery.test_historical_absence_allows_new_owned_oco_but_blocks_unowned_orders",
+      "test_restart_partial_recovery.RestartPartialRecovery.test_latest_generation_partial_exit_reprotects_after_freqtrade_applies_fill",
+      "test_restart_partial_recovery.RestartPartialRecovery.test_polluted_newer_partial_without_order_ids_stays_blocked",
+      "test_restart_partial_recovery.RestartPartialRecovery.test_restart_imports_partial_fill_then_reprotects_once",
+      "test_restart_partial_recovery.RestartPartialRecovery.test_restart_with_working_entry_keeps_generation_ownership_correct",
+      "test_restart_partial_recovery.RestartPartialRecovery.test_unverifiable_partial_fill_stays_blocked",
+      "test_retained_accounting.RetainedAccounting.test_closed_retained_inventory_preserves_cumulative_realized_profit",
+      "test_retained_accounting.RetainedAccounting.test_zero_net_exit_replay_clears_previous_realized_value",
+      "test_retained_inventory_monitor.RetainedInventoryMonitor.test_combined_dust_is_rechecked_when_price_crosses_minimum",
+      "test_retained_inventory_monitor.RetainedInventoryMonitor.test_missing_market_data_preserves_existing_aggregate_blocker",
+      "test_retained_inventory_monitor.RetainedInventoryMonitor.test_no_retained_inventory_needs_no_market_requests",
+      "test_retained_inventory_monitor.RetainedInventoryMonitor.test_verified_new_position_on_retained_pair_is_independent",
+      "test_retained_inventory_monitor.RetainedInventoryMonitor.test_wrong_scope_unverified_history_and_open_obligation_block",
+      "test_retained_slot_evidence.RetainedSlotEvidence.test_incomplete_or_changed_evidence_keeps_slot_and_reconciliation_visible",
+      "test_retained_slot_evidence.RetainedSlotEvidence.test_open_canonical_order_prevents_slot_release",
+      "test_retained_slot_evidence.RetainedSlotEvidence.test_valid_dust_releases_slot_but_keeps_inventory_and_invested_capital",
+      "test_rpc_session_cleanup.RpcSessionCleanup.test_get_rpc_releases_trade_and_custom_data_scoped_sessions",
+      "test_stake_policy.StakePolicy.test_fractional_allocation_cannot_pass_exact_contract",
+      "test_stake_policy.StakePolicy.test_json_numbers_retain_decimal_precision",
+      "test_stake_policy.StakePolicy.test_malformed_override_blocks_instead_of_defaulting",
+      "test_strategy_contract.StrategyContractTests.test_exchange_protection_owns_automatic_stops_and_operator_exit_remains_available",
+      "test_strategy_contract.StrategyContractTests.test_force_short_derivative_and_rebuy_tags_rejected",
+      "test_strategy_contract.StrategyContractTests.test_no_rebuy_and_fixed_stake",
+      "test_strategy_contract.StrategyContractTests.test_post_constructor_is_spot_long_only",
+      "test_strategy_contract.StrategyContractTests.test_runtime_contract_rejects_derivatives_and_wrong_allocation",
+      "test_strategy_contract.StrategyContractTests.test_valid_long_signal_delegates_upstream",
+      "test_telegram_release.TelegramRelease.test_incomplete_lifecycle_always_blocks_resume",
+      "test_telegram_settlements.TelegramSettlements.test_closed_retained_trade_uses_cumulative_profit_and_actual_settlement_day",
+      "test_telegram_settlements.TelegramSettlements.test_fully_sold_marker_is_a_closed_settlement",
+      "test_telegram_settlements.TelegramSettlements.test_nonretained_open_trade_is_not_a_settlement",
+      "test_telegram_settlements.TelegramSettlements.test_unverified_executable_nonfinite_or_open_obligations_are_not_settled",
+      "test_telegram_settlements.TelegramSettlements.test_zero_and_negative_realized_profit_do_not_fall_back_to_last_exit",
+      "test_user_stream_health.UserStreamHealth.test_connected_flag_cannot_keep_stale_stream_healthy",
+      "test_user_stream_shutdown.PrivateStreamShutdown.test_shutdown_cancels_idle_receive_and_allows_clean_restart",
+      "test_zero_fill_entry_cleanup.ZeroFillCleanupSourceContract.test_freqtrade_notifies_binana_on_zero_fill_terminal_entry",
+      "test_zero_fill_entry_cleanup.ZeroFillCleanupSourceContract.test_telegram_suppresses_max_slot_rejection_notices"
+    ],
+    "tests": 260
+  }
+}
