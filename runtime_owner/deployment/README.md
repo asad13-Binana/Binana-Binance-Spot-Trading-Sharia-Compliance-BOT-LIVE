@@ -1,10 +1,10 @@
 # LIVE owner build and Oracle preparation
 
 Use [the Oracle owner bundle guide](../../docs/ORACLE_OWNER_BUNDLE.md) to
-materialize the separate Freqtrade 2026.9 / BinanaNfiSpot package. The bundle
+materialize the separate Freqtrade 2026.10 / BinanaNfiSpot package. The bundle
 uses verified public source and current owner patches; it does not depend on
-an AWS image or AWS host paths. The legacy root Compose topology is a separate
-recovery package and must not be combined with this owner bundle.
+an AWS image or AWS host paths. The legacy root Compose topology and alternative order engines are retired;
+only the Oracle owner bundle is supported for a new installation.
 
 The LIVE configuration starts stopped with `allow_live=false` and an empty
 activation acknowledgement. Owner startup rejection is expected until a

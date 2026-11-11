@@ -1540,13 +1540,9 @@ def _backtest_status():
     if verified.exists():
         return ('VERIFIED PRODUCTION BACKTEST:\n'
                 + verified.read_text(encoding='utf-8')[:3500])
-    selftest = Path('/app/legacy_core/logs/backtest_results_selftest.json')
     lines = ['NO VERIFIED PRODUCTION BACKTEST is installed.',
              'The strategy has not proven an edge; previous real backtests lost after fees.',
              'Run the exact-strategy Freqtrade backtest and install its verified artifact.']
-    if selftest.exists():
-        lines.append('\n[Deterministic unit self-test artifact — NOT performance evidence:]')
-        lines.append(selftest.read_text(encoding='utf-8')[:1500])
     return '\n'.join(lines)[:3900]
 
 

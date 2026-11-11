@@ -1,6 +1,6 @@
 # Oracle LIVE owner bundle — preparation only
 
-The LIVE package uses Freqtrade **2026.9** and the `BinanaNfiSpot` five-minute
+The LIVE package uses Freqtrade **2026.10** and the `BinanaNfiSpot` five-minute
 owner with four 250-USDT slots, the existing Sharia policy, market freshness,
 native protection, recovery and signed release gates. Freqtrade is the sole
 order owner. The read-only monitor cannot place orders; the old executable
@@ -20,10 +20,10 @@ python runtime_owner/deployment/materialize_oracle_bundle.py /tmp/binana-live-ow
 python /tmp/binana-live-owner-bundle/oracle_preflight.py --bundle /tmp/binana-live-owner-bundle
 ```
 
-For offline packaging, append `--archive /path/to/freqtrade-2026.9.tar.gz` to
+For offline packaging, append `--archive /path/to/freqtrade-2026.10.tar.gz` to
 the first command. The required upstream commit is
-`1f394eaebc2f46a83d26971388628707802f8602`, with archive SHA-256
-`a453638c8ad59f8655036eaabd0858cb432331e70caa259976299e5c59108c89`.
+`4cf0351e08d26e96a6429ef48103b726bb230cf8`, with archive SHA-256
+`e7e83e139f0d7b01f337dfb2e0c4ff13d895431615886b3c8570e99bb139476a`.
 Wrong archives, symlinks, incomplete manifests and existing output directories
 are rejected. The complete output file manifest binds the separate LIVE
 package profile and mode. No retained AWS image is needed.
@@ -115,7 +115,7 @@ bundle builder. Local or emulated checks do not certify an Oracle host.
 
 Official references:
 
-- [Freqtrade 2026.9 Docker deployment](https://www.freqtrade.io/en/2026.9/docker_quickstart/)
-- [Freqtrade 2026.9 ARM64 installation guidance](https://www.freqtrade.io/en/2026.9/installation/)
+- [Freqtrade 2026.10 Docker deployment](https://www.freqtrade.io/en/2026.10/docker_quickstart/)
+- [Freqtrade 2026.10 ARM64 installation guidance](https://www.freqtrade.io/en/2026.10/installation/)
 - [Oracle Always Free resources](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
 - [Binance official documentation index](https://developers.binance.com/en/docs/llms.txt)
