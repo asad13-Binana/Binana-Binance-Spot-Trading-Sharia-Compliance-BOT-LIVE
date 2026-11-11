@@ -345,7 +345,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "ae06bbd6fea8e669b574b4ce36d0817045256d6ff865383566685c5a7fa439cf",
+      "sha256": "39b4ed2b272f0f03159e9a1bba4ee9ec4dcbbc08b7c6f275ccc4e167eded8e80",
       "size": 74032
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -353,7 +353,7 @@
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "f61c8b0cb1218e99f95dcfefb09a3b9c2293c776a63d5ba3b078b24cbde67812",
+      "sha256": "0679ae24221ffa1ee4dd755ed5c7c803a4eb3511875f544e1aa9fa93eb766863",
       "size": 443138
     },
     "docs/audit/ISSUE_LEDGER.csv": {
@@ -1769,8 +1769,8 @@
       "size": 6724
     },
     "tests/test_runtime_health_permissions.py": {
-      "sha256": "c45adb84e99594230770337ee4a6850ea2c5aeedd7c02cff3aa5d7105221de02",
-      "size": 7857
+      "sha256": "ff084fbe30ca28af75b7cae69cfcdfd9d11b266016fd75a08a6757f080bd809a",
+      "size": 7903
     },
     "tests/test_seed_source_registry.py": {
       "sha256": "07c1da0eb71a221ca7b399be083eb3536d31fbd08c50b8e6e44b9cfcd8e33155",
