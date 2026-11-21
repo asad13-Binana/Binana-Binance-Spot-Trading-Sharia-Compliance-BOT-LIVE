@@ -21,8 +21,8 @@
       "size": 1499
     },
     ".github/workflows/ci.yml": {
-      "sha256": "4f4db5492c9d75d95e441037e130e8b345412b332a295abee9b0f72d7967818a",
-      "size": 11358
+      "sha256": "0e391fb501dc8839290ae1529d2ecf989f46f156952e7b9e01bf492241254b46",
+      "size": 13201
     },
     ".gitignore": {
       "sha256": "4f9fd03b96ad4cad58801e464808e7969aa331801b1cb30ee06f44fde36db136",
@@ -349,7 +349,7 @@
       "size": 1781
     },
     "docs/audit/FILE_REVIEW_LEDGER.csv": {
-      "sha256": "e9ed229643d40afdcd8b359298dd731f0ed25b6a9be2ba68d05d2f58143b9459",
+      "sha256": "79fff81fbf4f55619bf8c52438a62fa77b06fa0376254af545c11d94da6c3db4",
       "size": 74969
     },
     "docs/audit/FINAL_AUDIT_REPORT.md": {
@@ -357,8 +357,8 @@
       "size": 3833
     },
     "docs/audit/FUNCTION_CALLBACK_LEDGER.csv": {
-      "sha256": "625db67ecba07dffcdf0897be53ad08d6b17de37abf3ff3287310d71b2e8a30c",
-      "size": 448185
+      "sha256": "b8ec538ae38ada408cad09460bc3bbf3a86603100364cfa3ba3c7725e6f2210f",
+      "size": 448602
     },
     "docs/audit/ISSUE_LEDGER.csv": {
       "sha256": "0c35c066d36aea9960c9feed960d69c0a3eaae1f7ff10fb5280d7e43cfe57771",
@@ -1881,8 +1881,8 @@
       "size": 21319
     },
     "tests/test_workflow_graph.py": {
-      "sha256": "8db5607cdeb8304979aea8a2204e5c6aedfc5eac2c75f5e2b25151ce1df48aac",
-      "size": 4240
+      "sha256": "6b1c0414278d5724b7caf847cbc553c4d8fe1e116153f54a114b20d1719687a8",
+      "size": 7473
     }
   },
   "lineage": "Freqtrade-owned Oracle bundle; historical source identities retained in Git",
