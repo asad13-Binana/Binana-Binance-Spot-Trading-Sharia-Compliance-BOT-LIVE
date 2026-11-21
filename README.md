@@ -1,99 +1,23 @@
-# BINANA Binance Spot — LIVE package
+# BINANA Oracle Freqtrade owner
 
-For new Oracle preparation, use [the owner bundle](docs/ORACLE_OWNER_BUNDLE.md)
-and [Oracle deployment route](docs/ORACLE_DEPLOYMENT_GUIDE.md). Freqtrade **2026.9**
-with `BinanaNfiSpot` is the sole order owner, retaining five-minute signals,
-four 250-USDT slots and the existing Sharia, freshness and native protection
-gates. `owner-monitor` cannot execute orders.
+The supported installation is the standalone Oracle owner bundle described in
+[docs/ORACLE_OWNER_BUNDLE.md](docs/ORACLE_OWNER_BUNDLE.md).
 
-This is a separate LIVE release candidate for local preparation. Its template
-is stopped with LIVE activation disabled; no production runtime is certified.
-Native ARM64, account, certificate, restore, rollback and soak acceptance remain
-separate. The root Compose/installer below is legacy sidecar recovery material,
-excluded from the new owner bundle and unsuitable for its upgrade or rollback.
-Historical [runtime comparison](docs/recovery/RUNTIME_PARITY_20261014.md) does
-not certify this candidate.
+Materialize the bundle from the pinned official Freqtrade source in a new output
+directory with `python runtime_owner/deployment/materialize_oracle_bundle.py OUTPUT`.
+This creates source and configuration templates; it does not install or start a bot.
 
-See [current status and recent changes](docs/recovery/RECOVERY_STATUS_20261007.md) and [the additive registry record](docs/recovery/REGISTRY_ADDITIONS_20260930.json). Historical deployment and validation notes below do not certify the current candidate.
+`BinanaNfiSpot` is the only order owner. The reviewed strategy remains 5m, four
+250 USDT slots, Spot-only, and uses the owner-maintained Sharia registry. Startup
+is stopped; LIVE remains disabled until its separate acceptance and authorization.
+Telegram, the monitor and research services do not acquire order ownership.
 
-## Disclaimer and risk warning
+GitHub Actions validates source and builds AMD64 and native ARM64 images. It
+creates an Oracle bundle artifact and has no deployment job or cloud credentials.
+Host state, accepted releases, database/WAL files and credentials are not source
+cleanup targets. Native host acceptance and authenticated exchange validation
+remain separate release gates.
 
-This software can place orders on a cryptocurrency exchange. Trading carries
-substantial risk, including total loss of funds.
-
-  * Not financial, investment, tax or legal advice.
-  * No profitability claim. The strategy has **not** been validated as
-    profitable after fees and slippage.
-  * The authors accept no liability for any financial loss arising from use
-    of this software.
-  * You are solely responsible for your API keys, capital, risk limits and
-    legal/tax compliance.
-  * Sharia screening output is automated research assistance, **not a fatwa**.
-
-Use the Binance Spot Testnet first. Deploy real capital only after your own
-independent validation, and only with money you can afford to lose entirely.
-
-See `LICENSE` for the full disclaimer.
-
-## Packaged architecture (legacy deployment)
-
-Six Docker services provide the top-50 USDT universe, governed Sharia egress,
-manual registry projection and v19.3 research screening, signal-only Freqtrade, the single
-order-owning execution sidecar, and owner-only Telegram control. A separate
-`botmon` systemd service observes
-authoritative execution state without trading credentials or Docker-socket
-access. See `ARCHITECTURE.md`.
-
-The universe scan can optionally enrich its output with free-tier CoinGecko
-and CoinMarketCap data (trending flags, market caps, an optional
-cross-verified market-cap floor). The feature is advisory-only, disabled by
-default, and hard-capped 4% under the documented free quotas — overrides
-clamp to the 96% ceiling, throttle state survives restarts, corrupt quota
-ledgers fail closed, and any provider problem degrades to Binance-only
-scanning. See `docs/EXTERNAL_SIGNALS.md`.
-
-## Verification
-
-```bash
-python -m venv .venv
-. .venv/bin/activate
-# Install each hash-locked runtime closure separately from unhashed test tools.
-pip install --require-hashes -r requirements.services.lock
-pip install --require-hashes -r monitoring/requirements-monitoring.lock
-pip install -r requirements-dev.txt
-bash deploy/verify_release.sh
-```
-
-The release gate runs the core unittest suite, the monitoring pytest suite,
-33 legacy self-tests, source/controller integrity, secret scanning, systemd
-validation, structured-file checks, and non-mutating exact-manifest
-verification. GitHub CI additionally builds the images and verifies a freshly
-extracted deterministic artifact.
-
-## Safety invariants
-
-- Testnet must be deployed first; live requires matching release markers and a
-  signed live-evidence envelope.
-- The current owner bundle uses Freqtrade for all orders. The retained root
-  Compose package has a different legacy execution architecture.
-- Research decisions require the supplied v19.3 controller and signed owner approval; the operational manual registry is a separate gate.
-- Inter-service messages are HMAC-authenticated and release-bound.
-- BNB and BTC are excluded as bases; no BNB fee dependency.
-- Trading secrets belong in the deployment host's mode-600 private environment, never in Git.
-
-## Documentation
-
-Start with `docs/ORACLE_DEPLOYMENT_GUIDE.md`,
-`docs/GITHUB_ORACLE_DEPLOYMENT.md`,
-`docs/GITHUB_RELEASE_AND_ROLLBACK_GUIDE.md`,
-`docs/SECURITY_AND_SECRETS_GUIDE.md`,
-`docs/SHARIA_LOCAL_SCREENING.md`,
-`docs/TELEGRAM_BOT_SETUP.md`,
-`docs/CODEX_RELEASE_NOTES_2026-08-09.md`,
-`docs/CODEX_RELEASE_NOTES_2026-08-08.md`,
-`docs/EXTERNAL_VALIDATION_RUNBOOK.md`,
-`docs/OFFICIAL_DEPLOYMENT_REFERENCES.md`, and `monitoring/README.md`.
-
-The strategy has not proven an edge: prior backtests lost after fees. Testnet,
-backtest gates, Oracle soak, and independent re-audit remain mandatory before
-live promotion.
+The root ICT/sidecar Docker topology and launchers were retired. Dated audit and
+recovery documents are historical evidence. See [docs/retirement/README.md](docs/retirement/README.md)
+for exact baseline source lookup and test coverage migration.

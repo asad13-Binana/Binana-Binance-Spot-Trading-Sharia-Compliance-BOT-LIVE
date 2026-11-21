@@ -138,13 +138,6 @@ class LiveOwnerServiceParity(unittest.TestCase):
             self.queue('FORCE_APPROVE')
         self.assertFalse(self.inbox.exists())
 
-    def test_old_root_compose_wires_all_required_projector_bus_keys(self):
-        import yaml
-        compose = yaml.safe_load((ROOT / 'docker-compose.yml').read_text())
-        wired = compose['services']['sharia-screener']['environment']
-        with mock.patch.dict('os.environ', {name: 't' * 48 for name in wired}, clear=True):
-            for purpose in (envelope.BUS_SHARIA_DECISION, envelope.BUS_SHARIA_RESULT):
-                self.assertEqual(len(envelope.load_key(purpose)), 48)
 
     def test_read_only_fallback_never_hides_mutating_command_outcomes(self):
         self.assertTrue(callable(getattr(bot, '_sidecar_read', None)))
